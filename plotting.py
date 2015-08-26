@@ -1,3 +1,5 @@
+# author: github.com/olehermanse
+
 # import libraries used for plotting and mathematical operations:
 import numpy as np
 import matplotlib.pyplot as plt
