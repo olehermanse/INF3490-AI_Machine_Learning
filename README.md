@@ -5,11 +5,12 @@
 **License:** The MIT License<br>
 
 **Python code for INF3490 - Biologically inspired computing and machine learning**<br>
-Code is written in python 2. Does not show complete solutions to the weekly exercises,
-but a starting point, and reference for those new to python.<br>
+Code is written in python 3. Does not show complete solutions to the weekly
+exercises, but a starting point, and reference for those new to python.<br>
 
 **Table of contents:**<br>
-1. [Plotting in Python with matplotlib](./plotting.py)<br>
+0. [Installing python](./00_setup)<br>
+1. [Introduction to python](./01_intro)<br>
 
 **The MIT License (MIT)**
 
