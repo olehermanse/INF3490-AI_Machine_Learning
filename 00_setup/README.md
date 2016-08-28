@@ -27,8 +27,11 @@ $ brew install python3
 ```
 (It can be useful to install both versions of python)
 
-### Ubuntu install
-TODO
+### Ubuntu(Server) install
+```
+$ sudo apt-get install python
+$ sudo apt-get install python3
+```
 
 ### Windows install
 Download python from python.org/downloads/. Enable the
