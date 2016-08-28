@@ -11,4 +11,4 @@ def f(x):
 
 x = np.linspace(-3, 3, 100) # Make array of 100 values between -2 and 3 (linear)
 plt.plot(x,f(x))            # Plot the function
-plt.show()              # Show all subplots in new window
+plt.show()                  # Show all subplots in new window

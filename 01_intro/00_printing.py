@@ -4,24 +4,21 @@ print("Hello, Python!")
 # Empty line:
 print("")
 
+# Multi line message:
+msg = """Dear reader,
+thank you for reading.
+- Writer.
+"""
+print(msg)
+
 # Variables:
 name = "Alice"
 age = 22
 
-# String concatenation:
-print(name + " is " + str(age) + " years old.")
+# Printing variables:
+print(name + " is " + str(age) + " years old. (String concat)")
+print("{} is {} years old. (String format)".format(name, age))
 
-# String format:
-print("{} is {} years old.".format(name, age))
-print("The {1} year old girl {0}".format(name, age))
-
-print("")
-print("If {0} beats {1},\n and {1} beats {2},\n then {0} beats {2}"\
+# .format is sometimes very useful:
+print("\nIf {0} beats {1},\n and {1} beats {2},\n then {0} beats {2}"\
       .format("Alice", "Bob", "Eve"))
-
-# Multi line message:
-print("")
-msg = """Dear reader,
-thank you for reading.
--Writer."""
-print(msg)

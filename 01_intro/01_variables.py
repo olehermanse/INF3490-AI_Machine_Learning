@@ -21,3 +21,8 @@ real_div  = 10/3	# This will give a float answer in python3 (!)
 int_div   = 10//3
 remainder = 10%3
 exponent  = 10**3   # 10^3 = 1000
+
+print("10/3  = " + str(10/3))
+print("10%3  = " + str(10%3))
+print("10//3 = " + str(10//3))
+print("10**3 = " + str(10**3))

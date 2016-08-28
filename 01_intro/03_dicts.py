@@ -1,5 +1,6 @@
 # dictionaries are 'like' hash-maps:
-database = {"boss": "Foo Bar"}
+database = {}                  # empty dict
+database = {"boss": "Foo Bar"} # dict with data
 
 # Add a key value pair to a dictionary:
 database["foo"] = "test"
@@ -13,7 +14,7 @@ person["description"] = "{} is a {} year old, {}m tall girl."\
 database[name] = person
 
 # Python is dynamically typed, so we don't need to worry about types:
-database["fib_numbers"] = fibonacci
+database["fib_numbers"] = [1,1,2,3,5]
 
 # Print using JavaScript Object Notation:
 import json
