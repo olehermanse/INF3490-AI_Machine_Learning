@@ -8,3 +8,5 @@ Parts:<br>
 4. [Structuring](./04_code_structure.py)<br>
 5. [Plotting](./05_plotting.py)<br>
 6. [Subplots](./06_sub_plots.py)<br>
+7. [Math and numpy](./07_math.py)<br>
+8. [Classes](./08_classes.py)<br>

@@ -1,10 +1,9 @@
-**Project name:** INF3490-PythonAI<br>
-**Date:** 2015-08-26<br>
+**Date:** 2016-08-28<br>
 **Author:** olehermanse ( http://www.github.com/olehermanse )<br>
 
 **The MIT License (MIT)**<br>
 
-Copyright (c) 2015 olehermanse<br>
+Copyright (c) 2016 olehermanse<br>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

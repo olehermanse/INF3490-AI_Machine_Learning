@@ -6,19 +6,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Define a mathematical expression as a function:
-def f(x):
-    return x**3
+def f(t):
+    return t**3
 
-def df(x):
-    return 3*x**2
+def df(t):
+    return 3*t**2
 
-def subp_lots():
-    x = np.linspace(-2, 3, 100) # Make array of 100 values between -2 and 3 (linear)
-    plt.subplot(121)            # 1 row of plots, 2 columns of plots, plot number 1
-    plt.plot(x,f(x))            # Plot the function
-    plt.subplot(122)            # 1 row of plots, 2 columns of plots, plot number 2
-    plt.plot(x,df(x))           # Plot the derivative
+def sub_plots():
+    t = np.linspace(-6, 6, 100) # Make array of 100 values
 
+    fig = plt.figure("Sub plots example figure")
+    fig.suptitle("Sub plots example title")
+
+    plt.subplot(211)            # 2 rows, 1 col, plot no. 1
+    plt.plot(t,f(t))            # Plot the function
+    plt.ylabel("d[m]")
+    plt.subplot(212)            # 2 rows, 1 col, plot no. 2
+    plt.plot(t,df(t))           # Plot the derivative
+    plt.xlabel("t[s]")
+    plt.ylabel("v[m/s]")
+
+    plt.savefig("plot.eps", format="eps")
     plt.show()                  # Show all subplots in new window
 
 if __name__ == "__main__":

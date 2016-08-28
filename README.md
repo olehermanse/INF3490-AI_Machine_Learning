@@ -3,18 +3,17 @@
 **Author:** olehermanse ( http://www.github.com/olehermanse )<br>
 **License:** The MIT License<br>
 
-## Python code for INF3490 - Biologically inspired computing and machine learning
-Code is written in python 3. Does not show complete solutions to the weekly
-exercises, but a starting point, and reference for those new to python.
-
-## Clone this repo
-```
-git clone git@github.com:olehermanse/INF3490-AI_Machine_Learning.git
-```
+## Python code for INF3490 - Biologically inspired computing
+Code is written in python 3. Examples to help with weekly exercises.
 
 ## Table of contents:
 0. [Installing python](./00_setup)<br>
 1. [Introduction to Python](./01_intro)<br>
+
+## Clone this repo
+```
+$ git clone git@github.com:olehermanse/INF3490-AI_Machine_Learning.git
+```
 
 ## Contribute
 If you have corrections, suggestions or improvements: feel free to submit an
@@ -22,7 +21,7 @@ issue or make a pull request.
 
 ## The MIT License (MIT)
 
-Copyright (c) 2015 olehermanse<br>
+Copyright (c) 2016 olehermanse<br>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
