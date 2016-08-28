@@ -1,12 +1,3 @@
-# Python has two very important data structures:
-l = [] # Lists
-d = {} # Dictionaries
-
-# lists are 'like' arrays:
-fibonacci = [1, 1, 2, 3, 5, 8]
-# Add element to list:
-fibonacci.append(13)
-
 # dictionaries are 'like' hash-maps:
 database = {"boss": "Foo Bar"}
 
