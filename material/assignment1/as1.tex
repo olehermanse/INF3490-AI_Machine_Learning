@@ -1,0 +1,264 @@
+% ================================== HEADER ====================================
+\documentclass{article}           % Sets style/look of many things.
+% \documentclass{report}          % part, chapters, front page etc.
+\usepackage{exsheets}
+\usepackage[utf8]{inputenc}       % Encoding of input files UTF-8
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{beramono}     % Font
+\usepackage{color}                % Color text
+\usepackage{titlesec}             % Select alternative section titles
+\usepackage{fancyvrb}
+\usepackage{verbatim}             % Comment environment
+\usepackage{listings}             % Format and render text/code etc.
+\usepackage{minted}               % Much better syntax highlighting
+\usepackage{float}                % Control of floating environment/figure
+\usepackage{graphicx,  subfigure} % Better figures, graphics, units etc.
+\usepackage{multicol}             % Multiple columns
+\usepackage{amsmath}              % Math: Equation, split, align etc.
+\usepackage{siunitx}              % SI units
+\usepackage{mathtools}            % Different math tools to use with amsmath
+\usepackage{amssymb}              % Math symbols
+\usepackage[
+    colorlinks,
+    citecolor=black,              % I like links with standard black color
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+]{hyperref}                       % Links in TOC etc.
+\usepackage[all]{hypcap}          % Better links to floating environment
+
+\usepackage{tabto}
+\newcommand\marginsymbol[1][0pt]{%
+  \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\title{\vspace{-2cm}INF3490/INF4490 Mandatory Assignment 1:\\
+Travelling Salesman Problem}
+\author{Ole Herman Schumacher Elgesem}
+\date{\today}
+
+% Removing paragraph indents is sometimes useful:
+%\setlength\parindent{0pt}
+
+% Make margins smaller to fit more figures, tables etc on page: (optional)
+\addtolength{\oddsidemargin}{-0.8in}
+\addtolength{\evensidemargin}{-0.8in}
+\addtolength{\textwidth}{1.6in}
+\addtolength{\topmargin}{-0.8in}
+\addtolength{\textheight}{1.6in}
+% ==============================================================================
+
+% ================================= EXAMPLES ===================================
+\begin{comment}
+
+% TABLE (TABULAR):
+\begin{table}[]
+\centering
+  \begin{tabular}{|l|c|c|c|}
+    \hline
+    Colors: & Red    & Green  & Blue \\ \hline
+    Red     & Red    & Yellow & Purple \\ \hline
+    Green   & Yellow & Green  & Cyan \\ \hline
+    Blue    & Purple & Cyan   & Blue \\ \hline
+  \end{tabular}
+  \caption{Caption}
+  \label{tab:my_label}
+\end{table}
+
+% FIGURE:
+The plot in figure \ref{fig:unique_name} clearly shows something important.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{figs/silicon.png}
+\caption{The caption explains the figure.}
+\label{fig:unique_name}
+\end{center}
+\end{figure}
+
+% EQUATION:
+\begin{equation}
+\frac{df}{dt} = \lim_{h \to 0}\frac{f(t+h)-f(t)}{h}
+\end{equation}
+
+% ALIGNED MATH:
+\begin{align*}
+    r      &= \sqrt{x^2 + y^2 + z^2} & x &= r\cos \theta \sin \phi \\
+    \theta &= \tan^-1(\frac{y}{x})   & y &= r\sin \theta \sin \phi \\
+    \phi   &= \cos^-1(\frac{z}{r})   & z &= r\cos \phi
+\end{align*}
+
+% CENTERED DISPLAY MODE MATH:
+\[ V_{th} = 0.45V \]
+
+% INLINE MATH:
+We used a supply voltage of 1.2 volts; \(V_{dd} = 1.2\text{V}\).
+
+% MATRIX:
+\[
+\begin{Bmatrix} % Curly brackets
+v_1 \\
+v_2
+\end{Bmatrix}
+= \begin{bmatrix} % Square brackets
+Z_{11} & Z_{12} \\
+Z_{21} & Z_{22}
+\end{bmatrix}
+\begin{Bmatrix}
+i_1 \\
+i_2
+\end{Bmatrix}
+\]
+
+% COLORS:
+\definecolor{orange}{RGB}{255,127,0}
+{\color{red} Red text.} {\color{orange} Orange text.}
+
+% SOURCE CODE:
+\inputminted{Python}{src/hello.py}
+
+% MULTIPLE COLUMNS:
+\begin{multicols}{2}
+Write text and add figures etc. Content will be automatically split. You can
+put figures, tables and even other multicols. Multiple columns can reduce
+wasted space in a document.
+\end{multicols}
+
+% FOOTNOTES:
+A simple footnote\footnote{Additional information} or
+footnotemark\footnotemark{} is more readable.
+\footnotetext{Footnotes are usefule for definitions, clarifications,
+background info, e-mail/website info etc.}
+
+\end{comment}
+% ==============================================================================
+
+% ================================= DOCUMENT ===================================
+\begin{document}
+    \renewcommand\marginsymbol[1][0pt]{%
+  \tabto*{0cm}\makebox[-1cm][c]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
+
+\maketitle
+\section*{Rules}
+Before you begin the exercise, review the rules at this website:
+\begin{center}
+\url{http://www.uio.no/english/studies/admin/compulsory-activities/mn-ifi-mandatory.html}
+\end{center}
+\section*{Delivering}
+\textbf{Deadline:} 2016-09-23 23:59:00. All deliveries must be made through
+\href{https://devilry.ifi.uio.no}{\textbf{Devilry}}.
+\section*{What to deliver?}
+Deliver one single zipped folder (.zip, .tgz or .tar.gz) which includes:
+\begin{itemize}
+    \item PDF report containing:
+    \begin{itemize}
+        \item Your name and username (!)
+        \item Instructions on how to run your program.
+        \item Answers to all questions from assignment.
+        \item \emph{Brief} explanation of what you've done.
+    \end{itemize}
+    \item Source code
+    \item The european cities file so the program will run right away.
+    \item Any files needed for the group teacher to easily run your program on
+          IFI linux machines.
+\end{itemize}
+\emph{Important: } if you weren't able to finish the assignment, use the PDF
+report to elaborate on what you've tried and what problems you encountered.
+Students who have made an effort and attempted all parts of the assignment
+will get a second chance even if they fail initially. This exercise will be
+graded PASS/FAIL.
+\section*{Introduction}
+In this exercise, you will attempt to solve an instance of the traveling
+salesman problem (TSP) using different methods. The goal is to become familiar
+with evolutionary algorithms and to appreciate their effectiveness on a
+difficult search problem. You may use
+whichever programming language you like, but we strongly suggest that you try
+to use Python, since you will be required to write the second assignment in
+Python. You must write your program from scratch (but you may use
+non-EA-related libraries).
+
+\section*{Problem}
+
+The traveling salesman, wishing to disturb the residents of the major cities
+in some region of the world in the shortest time possible, is faced with the
+problem of finding the shortest tour among the cities. A tour is a path that
+starts in one city, visits all of the other cities, and then returns to the
+starting point. The relevant pieces of information, then, are the cities and
+the distances between them. In this instance of the TSP, a number of European
+cities are to be visited. Their relative distances are given in the data file
+found at
+\url{http://www.uio.no/studier/emner/matnat/ifi/INF3490/h16/assignment-1/european_cities.csv}.\\
+(You will use permutations to represent tours in your programs. If you use
+Python, the itertools module provides a permutations function that returns
+successive permutations; and a recipe for generating random permutations
+can be found at
+\url{http://docs.python.org/library/itertools.html#recipes}.)
+
+\begin{table}[]
+\centering
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+              & Barcelona & Belgrade & Berlin  & Brussels & Bucharest & Budapest \\ \hline
+    Barcelona & 0         & 1528.13  & 1497.61 & 1062.89  & 1968.42   & 1498.79  \\ \hline
+    Belgrade  & 1528.13   & 0        & 999.25  & 1372.59  & 447.34    & 316.41   \\ \hline
+    Berlin    & 1497.61   & 999.25   & 0       & 651.62   & 1293.40   & 689.06   \\ \hline
+    Brussels  & 1062.89   & 1372.59  & 651.62  & 0        & 1769.69   & 1131.52  \\ \hline
+    Bucharest & 1968.42   & 447.34   & 1293.40 & 1769.69  & 0         & 639.77   \\ \hline
+    Budapest  & 1498.79   & 316.41   & 689.06  & 1131.52  & 639.77    & 0        \\ \hline
+  \end{tabular}
+  \caption{First 6 cities from csv file.}
+  \label{tab:cities}
+\end{table}
+
+\section*{Exhaustive Search}
+First, try to solve the problem by inspecting every possible tour. Start by
+writing a program to find the shortest tour among a subset of the cities (say,
+6 of them). Measure the amount of time your program takes. Incrementally add
+more cities and observe how the time increases.\\
+
+What is the shortest tour (i.e., the actual sequence of cities, and its
+length) among the first 10 cities (that is, the cities starting with B,C,D,H
+and I)? How long did your program take to find it? How long would you expect
+it to take with all 24 cities?
+
+\section*{Hill Climbing}
+Then, write a simple hill climber to solve the TSP. How well does the hill
+climber perform, compared to the result from the exhaustive search for the
+first 10 cities? Since you are dealing with a stochastic algorithm, you should
+run the algorithm several times to measure its performance. Report the length
+of the tour of the best, worst and mean of 20 runs (with random starting
+tours), as well as the standard deviation of the runs, both with the 10 first
+cities, and with all 24 cities.
+
+\section*{Genetic Algorithm}
+Next, write a genetic algorithm (GA) to solve the problem. Choose mutation
+and crossover operators that are appropriate for the problem (see chapter 3
+of the Eiben and Smith textbook). Choose three different values for the
+population size. Define and tune other parameters yourself and make
+assumptions as necessary (and report them, of course).\\
+
+For all three variants: As with the hill climber, report best, worst, average
+and deviation of tour length out of 20 runs of the algorithm (of the best
+individual of last generation). Also, find and plot the average fitness of
+the best fit individual in each generation (average across runs), and include
+a figure with all three curves in the same plot in the report. Conclude which
+is best in terms of tour length and number of generations of evolution time.\\
+
+Among the first 10 cities, did your GA find the shortest tour (as found by the
+exhaustive search)? Did it come close? For both 10 and 24 cities: How did the
+running time of your GA compare to that of the exhaustive search? How many
+tours were inspected by your GA as compared to by the exhaustive search?
+
+\section*{Hybrid Algorithm (INF4490 only)}
+Implement a hybrid algorithms to solve the TSP: Couple your GA and hill
+climber by running the hill climber a number of iterations on each individual
+in the population as part of the evaluation. Test both Lamarckian and
+Baldwinian learning models and report the results of both variants in the same
+way as with the pure GA (min, max, mean and std.dev. of the end result and an
+averaged generational plot). How does the results compare to that of the pure
+GA, considering the number of evaluations done?
+
+\section*{Corrections and suggestions}
+Corrections of grammar, language, notation or suggestions for improving this
+assignment are appreciated. E-mail me at: \textbf{olehelg@uio.no}
+\end{document}
+% ==============================================================================
