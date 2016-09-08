@@ -38,7 +38,7 @@ def plot_gradient_ascent(function,derivative,start,stop,steps):
     plt.subplot(212)
     plt.plot(x,derivative(x))
 
-    plt.savefig("plot.eps", format="eps")
+    plt.savefig("gradient.eps", format="eps")
     plt.show()                  # Show all subplots in new window
 
 if __name__ == "__main__":

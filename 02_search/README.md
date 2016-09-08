@@ -2,9 +2,9 @@
 Plan/notes for group lecture September 8th 2016
 # Info
 * [GitHub repository for this course](https://github.com/olehermanse/INF3490-AI_Machine_Learning)
-    * Submit an issue if you find an error/mistake.
-    * Or - Fix it yourself and make a pull request.
-    * Or - E-mail me if you don't use github: [olehelg@uio.no](mailto:olehelg@uio.no)
+    * Submit an issue if you find an error/mistake...
+    * ... or fix it yourself and make a pull request...
+    * ... or e-mail me if you don't use github: [olehelg@uio.no](mailto:olehelg@uio.no)
 * [Exercises and solutions](https://github.com/olehermanse/INF3490-AI_Machine_Learning/tree/master/material)
 
 # Python intro
