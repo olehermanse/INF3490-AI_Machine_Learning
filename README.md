@@ -8,9 +8,9 @@ Code is written in python 3. Examples to help with weekly exercises.
 
 ## Group lectures
 <ol start="0">
-  <li>[Installing python](./00_setup)<br></li>
-  <li>[Introduction to Python](./01_intro)<br></li>
-  <li>[Intro to course and search algorithms](./02_search)</li>
+  <li><a href="./00_setup">Installing python</a><br></li>
+  <li><a href="./01_intro">Introduction to Python</a><br></li>
+  <li><a href="./02_search">Intro to course and search algorithms</a></li>
 </ol>
 
 ## Exercises
