@@ -33,12 +33,12 @@ def plot_gradient_ascent(function,derivative,start,stop,steps):
     plt.subplot(211)
     plt.plot(x,function(x))
     randx = random.uniform(start,stop)
-    solution = gradient_ascent(function, derivative, 0.01, randx, 0.001)
+    solution = gradient_ascent(function, derivative, 0.1, randx, 0.001)
     plt.plot(solution[0],solution[1], color="yellow", marker="*", markersize=16)
     plt.subplot(212)
     plt.plot(x,derivative(x))
 
-    plt.savefig("gradient.eps", format="eps")
+    plt.savefig("gradient.pdf", format="pdf")
     plt.show()                  # Show all subplots in new window
 
 if __name__ == "__main__":

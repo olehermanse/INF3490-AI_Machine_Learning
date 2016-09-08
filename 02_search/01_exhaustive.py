@@ -35,7 +35,7 @@ def plot_with_max(func,start,stop,steps):
     (x,y) = maximum
     plt.plot(x,y, color="yellow", marker="*", markersize=16)
 
-    plt.savefig("exhaustive.eps", format="eps")
+    plt.savefig("exhaustive.pdf", format="pdf")
     plt.show()
 
 if __name__ == "__main__":
