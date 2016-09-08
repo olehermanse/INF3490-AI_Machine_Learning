@@ -3,8 +3,8 @@ Plan/notes for group lecture September 8th 2016
 # Info
 * [GitHub repository for this course](https://github.com/olehermanse/INF3490-AI_Machine_Learning)
     * Submit an issue if you find an error/mistake.
-    * Or: Fix it yourself and make a pull request.
-    * Or: E-mail me if you don't use github: [olehelg@uio.no](mailto:olehelg@uio.no)
+    * Or - Fix it yourself and make a pull request.
+    * Or - E-mail me if you don't use github: [olehelg@uio.no](mailto:olehelg@uio.no)
 * [Exercises and solutions](https://github.com/olehermanse/INF3490-AI_Machine_Learning/tree/master/material)
 
 # Python intro
@@ -43,7 +43,7 @@ Plan/notes for group lecture September 8th 2016
     * Step size
 * Gradient ascent vs 'simple' search algorithms
 
-## Terminology and representations
+## Terminology, representations and problem solving
 * Approaching *hard* problems (Why take this course).
 * Problem
     * Goal / Concept / What needs to be done
