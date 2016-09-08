@@ -8,7 +8,22 @@ Plan/notes for group lecture September 8th 2016
 * [Exercises and solutions](https://github.com/olehermanse/INF3490-AI_Machine_Learning/tree/master/material)
 
 # Python intro
-* Last week: printing, variables, lists, dicts, plotting, matrices,
+* [The Zen of Python](https://www.python.org/dev/peps/pep-0020/)
+    * "Beautiful is better than ugly."
+    * "Simple is better than complex."
+    * "Readability counts."
+* Python is/has
+    * Readable and beautiful
+    * Easy and fast to write
+    * Decent performance
+    * Modern features
+    * Functions and libraries to do *anything*.
+* Last week - printing, variables, lists, dicts, plotting, matrices. (Basic examples that you should understand and be familiar with for this course)
+* This week - classes:
+    * Class vs instance(object)
+    * self
+    * instance method, class method, static method
+    * Use classes and OOP (Object oriented programming) when it makes sense, not by default.
 
 ## 'Simple' search algorithms
 * Draw Hill Climber in 3D.
