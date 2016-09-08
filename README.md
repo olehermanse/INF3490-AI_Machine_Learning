@@ -6,9 +6,19 @@
 ## Python code for INF3490 - Biologically inspired computing
 Code is written in python 3. Examples to help with weekly exercises.
 
-## Table of contents:
-0. [Installing python](./00_setup)<br>
-1. [Introduction to Python](./01_intro)<br>
+## Group lectures
+<ol start="0">
+  <li>[Installing python](./00_setup)<br></li>
+  <li>[Introduction to Python](./01_intro)<br></li>
+  <li>[Intro to course and search algorithms](./02_search)</li>
+</ol>
+
+## Exercises
+* [Week 1](./material/week1)
+* [Week 2](./material/week2)
+
+## Assignments
+* [Mandatory assignment 1](./material/assignment1)
 
 ## Clone this repo
 ```
