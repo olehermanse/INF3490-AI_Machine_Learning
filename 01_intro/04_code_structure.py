@@ -9,4 +9,4 @@ def sample_function(msg):
 
 if __name__ == "__main__":
 	print(sys.argv)              # List of cmd line arguments
-	sample_function(sys.argv(1))
+	sample_function(sys.argv[1])
