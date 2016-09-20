@@ -29,7 +29,7 @@
 
 \usepackage{tabto}
 \newcommand\marginsymbol[1][0pt]{%
-  \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
+    \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 \title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 1}
@@ -137,9 +137,9 @@ background info, e-mail/website info etc.}
   \tabto*{0cm}\makebox[-1cm][c]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \maketitle
-\(\mathbb{P}\) marks the programming exercises, we strongly recommend using
-the python programming language for these. Exercises may be added/changed
-after publishing.
+\(\mathbb{P}\) marks the programming exercises,
+we strongly recommend using the python programming language.
+Exercises may be added/changed after publishing.
 
 \section{Simple search algorithms}
 
@@ -149,63 +149,38 @@ Given the function \(f(x) = -x^4 + 2x^3 + 2x^2 - x\):
 What is its derivative \(f'(x)\) ?
 
 \subsection{Plotting \marginsymbol}
-Plot the function, and its gradient(derivative) from \(x=-2\) to \(x=3\). Use
-python, wolfram alpha or another plotting tool of your choice.
+Plot the function, and its gradient(derivative) from \(x=-2\) to \(x=3\).
+Use python, wolfram alpha or another plotting tool of your choice.
 
 \subsection{Gradient Ascent \marginsymbol}
 \label{subsec:grada}
-Maximize using gradient ascent. You can try step size 0.1 and start somewhere
-in the range [-2, 3]. How does the choice of starting point and step size
-affect the algorithm's performance? Is there a starting point where the
-algorithm would not even be able to find a local maximum?
+Maximize using gradient ascent.
+You can try step size 0.1 and start somewhere in the range [-2, 3].
+How does the choice of starting point and step size affect the algorithm's performance?
+Is there a starting point where the algorithm would not even be able to find a local maximum?
 
 \subsection{Exhaustive Search \marginsymbol}
 \label{subsec:exhaust}
-Assume that we are only interested in maxima of \(f(x)\) where
-\(-2\leq x \leq 3\), and \(x\) increases in steps of length 0.5.
-(\(\Delta x = 0.5\)). Perform an exhaustive search to
-maximize \(f(x)\) and plot the result.
+Assume that we are only interested in maxima of \(f(x)\),
+where \(-2\leq x \leq 3\),
+and \(x\) increases in steps of length 0.5 (\(\Delta x = 0.5\)).
+Perform an exhaustive search to maximize \(f(x)\) and plot the result.
 
 \subsection{Greedy Search and Hill Climbing}
-In what way would greedy search and hill climbing differ for the
-maximization problem in Problem \ref{subsec:grada}? Can you identify a starting position
-where the two algorithms might give different results?
+In what way would greedy search and hill climbing differ for the maximization problem in Problem \ref{subsec:grada}?
+Can you identify a starting position where the two algorithms might give different results?
 
 \subsection{Possible improvements}
-Gradient ascent, greedy search and hill climbing are quite similar, and are
-all based almost exclusively on exploitation. Can you think of any additions
-to these algorithms in order to do more exploration?
+Gradient ascent, greedy search and hill climbing are quite similar, and are all based almost exclusively on exploitation.
+Can you think of any additions to these algorithms in order to do more exploration?
 
 \subsection{Exhaustive search vs. simulated annealing}
-Which algorithm do you think is the most efficient at maximizing \(f(x)\) under
-the conditions in Problem \ref{subsec:exhaust}: exhaustive search or simulated annealing?
-Explain.
-\begin{comment}
-\section{Evolutionary strategies(ES) theory}
-\subsection{Comparing strategies}
-A common variant of evolutionary strategies used for (local) search is the
-(1 + 4) ES. How would this differ from the (1 + 1) ES in how the search space
-is explored? How does this, and (1 + \(\lambda\)) in general, compare to hill
-climbing and greedy search?
-\subsection{Performance}
-What effect does an adaptive search strategy have on optimization performance?
-\subsection{Mutation time}
-How would it affect the search if the strategy parameters were mutated after
-the solution parameters instead of before?
-
-\section{ES implementation and comparison}
-\subsection{3 generation result \marginsymbol}
-Ignoring mutation, and starting with the population \{1, 2, 3, 4\}, implement
-and run 3 generations of a (4 + 8) ES maximizing \(g(x) = x\), and observe
-what the end population looks like (use intermediary recombination).
-\subsection{Probability of survival}
-If a (4, 8) ES had been used in Problem 3a, what would the probability of
-the optimal solution (\(x = 4\)) surviving the first generation have been?
-\subsection{Comparison \marginsymbol}
-Repeat Problem 3a with an EP with \(q = 2\). How do the two algorithms compare?
-\end{comment}
+Which algorithm do you think is the most efficient at maximizing \(f(x)\) under the conditions in Problem \ref{subsec:exhaust};
+exhaustive search or simulated annealing? Explain.
 \section*{Corrections and suggestions}
-Corrections of grammar, language, notation or suggestions for improving these
-exercieses are appreciated. E-mail me at: \textbf{olehelg@uio.no}
+Corrections of grammar, language, notation or suggestions for improving these exercises are appreciated.
+E-mail me at: \href{mailto:olehelg@uio.no}{\textbf{olehelg@uio.no}} or use
+\href{https://github.com/olehermanse/INF3490-AI_Machine_Learning}{\textbf{GitHub}}
+to submit an issue or create a pull request.
 \end{document}
 % ==============================================================================
