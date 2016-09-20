@@ -29,10 +29,10 @@
 
 \usepackage{tabto}
 \newcommand\marginsymbol[1][0pt]{%
-    \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
+  \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 1}
+\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 3}
 \author{Ole Herman Schumacher Elgesem, Magnus Olden, Stian Petlund}
 \date{\today}
 
@@ -53,46 +53,13 @@
   \tabto*{0cm}\makebox[-1cm][c]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \maketitle
-\(\mathbb{P}\) marks the programming exercises,
-we strongly recommend using the python programming language.
-Exercises may be added/changed after publishing.
-
-\section{Simple search algorithms}
-
-Given the function \(f(x) = -x^4 + 2x^3 + 2x^2 - x\):
-
-\subsection{Derivative}
-What is its derivative \(f'(x)\) ?
-
-\subsection{Plotting \marginsymbol}
-Plot the function, and its gradient(derivative) from \(x=-2\) to \(x=3\).
-Use python, wolfram alpha or another plotting tool of your choice.
-
-\subsection{Gradient Ascent \marginsymbol}
-\label{subsec:grada}
-Maximize using gradient ascent.
-You can try step size 0.1 and start somewhere in the range [-2, 3].
-How does the choice of starting point and step size affect the algorithm's performance?
-Is there a starting point where the algorithm would not even be able to find a local maximum?
-
-\subsection{Exhaustive Search \marginsymbol}
-\label{subsec:exhaust}
-Assume that we are only interested in maxima of \(f(x)\),
-where \(-2\leq x \leq 3\),
-and \(x\) increases in steps of length 0.5 (\(\Delta x = 0.5\)).
-Perform an exhaustive search to maximize \(f(x)\) and plot the result.
-
-\subsection{Greedy Search and Hill Climbing}
-In what way would greedy search and hill climbing differ for the maximization problem in Problem \ref{subsec:grada}?
-Can you identify a starting position where the two algorithms might give different results?
-
-\subsection{Possible improvements}
-Gradient ascent, greedy search and hill climbing are quite similar, and are all based almost exclusively on exploitation.
-Can you think of any additions to these algorithms in order to do more exploration?
-
-\subsection{Exhaustive search vs. simulated annealing}
-Which algorithm do you think is the most efficient at maximizing \(f(x)\) under the conditions in Problem \ref{subsec:exhaust};
-exhaustive search or simulated annealing? Explain.
+\(\mathbb{P}\) marks the programming exercises, we strongly recommend using
+the python programming language for these. Exercises may be added/changed
+after publishing.
+\section{Migration}
+In what ways does the island model and the diffusion model handle migration differently?
+With the population arranged into a grid of \(3\times5\) subpopulations,
+how many iterations would at least be needed for a mutation in one corner of the grid to reach the corner at the opposite end with 4 neighbors (N,S,E,W) and with 8 neighbors (N,NE,E,SE,S,SW,W,NW)?
 \section*{Corrections and suggestions}
 Corrections of grammar, language, notation or suggestions for improving these exercises are appreciated.
 E-mail me at: \href{mailto:olehelg@uio.no}{\textbf{olehelg@uio.no}} or use

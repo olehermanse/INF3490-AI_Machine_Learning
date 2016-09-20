@@ -1,9 +1,8 @@
-**Project name:** INF3490 Biologically Inspired Computing<br>
-**Date:** 2016-08-28<br>
+**Project name:** INF3490/INF4490 Biologically Inspired Computing<br>
 **Author:** olehermanse ( http://www.github.com/olehermanse )<br>
 **License:** The MIT License<br>
 
-## Python code for INF3490 - Biologically inspired computing
+## Python code for INF3490/INF4490 - Biologically inspired computing
 Code is written in python 3. Examples to help with weekly exercises.
 
 ## Group lectures
@@ -16,6 +15,8 @@ Code is written in python 3. Examples to help with weekly exercises.
 ## Exercises
 * [Week 1](./material/week1)
 * [Week 2](./material/week2)
+* [Week 3](./material/week3)
+* [Week 4](./material/week4)
 
 ## Assignments
 * [Mandatory assignment 1](./material/assignment1)
@@ -28,6 +29,8 @@ $ git clone git@github.com:olehermanse/INF3490-AI_Machine_Learning.git
 ## Contribute
 If you have corrections, suggestions or improvements: feel free to submit an
 issue or make a pull request.
+
+## Contributors
 
 ## The MIT License (MIT)
 
