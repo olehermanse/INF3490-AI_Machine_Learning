@@ -56,10 +56,29 @@
 \(\mathbb{P}\) marks the programming exercises, we strongly recommend using
 the python programming language for these. Exercises may be added/changed
 after publishing.
-\section{Migration}
-In what ways does the island model and the diffusion model handle migration differently?
-With the population arranged into a grid of \(3\times5\) subpopulations,
-how many iterations would at least be needed for a mutation in one corner of the grid to reach the corner at the opposite end with 4 neighbors (N,S,E,W) and with 8 neighbors (N,NE,E,SE,S,SW,W,NW)?
+
+\section{Evolution strategy(ES)} % 1
+\subsection{} % a
+A common variant of evolution strategies used for (local) search is the \((1 + 4)\) ES.
+How would this differ from the \((1 + 1)\) ES in how the search space is explored?
+How does this, and \((1 + \lambda)\) in general, compared to hill climbing and greedy search?
+\subsection{} % b
+What effect does an adaptive search strategy have on optimization performance?
+\subsection{} % c
+How would it affect the search if the strategy parameters were mutated after the solution parameters instead of before?
+\section{ES Implementation} % 2
+\subsection{\marginsymbol} % a
+\label{subsec:w4e3a}
+Ignoring mutation, and starting with the population \(\{1, 2, 3, 4\}\),
+implement and run 3 generations of a \((4 + 8)\) ES maximizing \(g(x) = x\), and observe what the end population looks like (use intermediary recombination).
+\subsection{} % b
+If a \((4, 8)\) ES had been used in Problem \ref{subsec:w4e3a}, what would the probability of the optimal solution \((x = 4)\) surviving the first generation have been?
+\subsection{\marginsymbol} % c
+Repeat Problem \ref{subsec:w4e3a} with an EP with \(q = 2\). How do the two algorithms compare?
+\section{Knapsack problem}
+In a 0-1 \href{https://en.wikipedia.org/wiki/Knapsack_problem}{\textbf{knapsack problem}}, how could you implement a repair mutation to transform infeasible solutions into feasible ones
+(i.e. make the sum of costs of the selected items go below the budget)?
+
 \section*{Corrections and suggestions}
 Corrections of grammar, language, notation or suggestions for improving these exercises are appreciated.
 E-mail me at: \href{mailto:olehelg@uio.no}{\textbf{olehelg@uio.no}} or use

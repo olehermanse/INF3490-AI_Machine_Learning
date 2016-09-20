@@ -30,12 +30,13 @@ $ git clone git@github.com:olehermanse/INF3490-AI_Machine_Learning.git
 If you have corrections, suggestions or improvements: feel free to submit an
 issue or make a pull request.
 
-## Contributors
+## Authors/Contributors
 * Eivind Samuelsen
 * Jim Tørresen
 * Stian Petlund
 * Magnus Olden
 * Ole Herman Schumacher Elgesem
+* Torstein Brevig
 
 ## The MIT License (MIT)
 
