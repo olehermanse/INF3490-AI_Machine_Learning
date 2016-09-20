@@ -31,6 +31,11 @@ If you have corrections, suggestions or improvements: feel free to submit an
 issue or make a pull request.
 
 ## Contributors
+* Eivind Samuelsen
+* Jim Tørresen
+* Stian Petlund
+* Magnus Olden
+* Ole Herman Schumacher Elgesem
 
 ## The MIT License (MIT)
 
