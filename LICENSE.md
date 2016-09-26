@@ -3,9 +3,10 @@
 
 **The MIT License (MIT)**<br>
 
-This copyright notice and license only applies to latex and python source code
-written by olehermanse. All figures, assignment and exercise texts are
-copyright to their respective authors and not licensed under the MIT license.
+This copyright notice and license only applies to text and source code
+written by olehermanse. All figures, assignment and exercise texts in the
+material folder are copyright to their respective authors and not licensed
+under the MIT license.
 
 Copyright (c) 2016 olehermanse<br>
 
