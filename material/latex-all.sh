@@ -26,3 +26,6 @@ triplelatex sol3.tex
 cd ../week4
 triplelatex ex4.tex
 triplelatex sol4.tex
+cd ../week5
+triplelatex ex5.tex
+triplelatex sol5.tex

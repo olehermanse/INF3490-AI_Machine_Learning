@@ -32,7 +32,7 @@
   \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 2}
+\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 5}
 \author{Ole Herman S. Elgesem, Magnus Olden, Stian Petlund}
 \date{\today}
 
@@ -57,24 +57,42 @@
 the python programming language for these. Exercises may be added/changed
 after publishing.
 
-\section{Representations}
-Recall all the representations that have been presented. Which mutation and
-recombination operators are compatible with which representations?
+\section{Single Layer Perceptron}
+\subsection{}
+In the perceptron below, what will the output be when the input is (0, 0)?
+What about inputs (0, 1), (1, 1) and (1, 0)?
+What if we change the bias weight to -0.5?
 
-\section{Bit flip mutation}
-Given the binary chromosome with length 4, calculate the probability that no
-bits, one bit and more than one bit will be flipped in a bit-flip mutation with
-\(p_m = \frac{1}{4}\).
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{fig1.png}
+\caption{An illustrated example of a single layer perceptron}
+\label{fig:slp}
+\end{center}
+\end{figure}
 
-\section{Crossover \marginsymbol}
-Given the sequences (2,4,7,1,3,6,8,9,5) and (5,9,8,6,2,4,1,3,7). Implement
-these algorithms to create a new pair of solutions:
-\renewcommand{\theenumi}{\alph{enumi}}
-\begin{enumerate}
-  \item Partially mapped crossover (PMX).
-  \item Order crossover.
-  \item Cycle crossover.
-\end{enumerate}
+\subsection{}
+Starting with random weights, how do you proceed in order to train the
+perceptron above to perform any given binary operation?
+\subsection{\marginsymbol}
+Implement the perceptron, and train it to perform the logical functions NOT
+(use only one of the inputs), NAND, and NOR. What happens when you try to
+train it do the XOR function?
+
+\section{Multi Layer Perceptron (MLP)}
+The figure below shows a multilayer perceptron that constructs the XOR function.
+How would you rewrite it to construct the binary equivalence function
+(i.e. the output is above threshold when both inputs are either 0 or 1)? Can
+you construct it so that it will detect equivalence for any combination of integer
+inputs?
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{fig2.png}
+\caption{An illustrated example of a multi layer perceptron}
+\label{fig:mlp}
+\end{center}
+\end{figure}
 
 \section*{Corrections and suggestions}
 Corrections of grammar, language, notation or suggestions for improving these exercises are appreciated.

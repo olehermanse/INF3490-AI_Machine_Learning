@@ -17,6 +17,7 @@ Code is written in python 3. Examples to help with weekly exercises.
 * [Week 2](./material/week2)
 * [Week 3](./material/week3)
 * [Week 4](./material/week4)
+* [Week 5](./material/week5)
 
 ## Assignments
 * [Mandatory assignment 1](./material/assignment1)
@@ -33,7 +34,7 @@ issue or make a pull request.
 ## Authors/Contributors
 * Eivind Samuelsen
 * Jim Tørresen
-* Stian Petlund
+* Stian Lind Petlund
 * Magnus Olden
 * Ole Herman Schumacher Elgesem
 * Torstein Brevig
