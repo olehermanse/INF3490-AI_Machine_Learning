@@ -16,9 +16,9 @@ for foldername in *; do
     if [[ -d $foldername ]]; then
         cd $foldername
         for filename in *.tex; do
+            echo "LATEX-ALL: "$filename" in folder "$foldername
             triplelatex $filename
         done
         cd ..
     fi
-
 done

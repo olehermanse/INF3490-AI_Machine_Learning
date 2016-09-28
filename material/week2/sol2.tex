@@ -32,8 +32,8 @@
   \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 2}
-\author{Ole Herman S. Elgesem, Magnus Olden, Stian Petlund}
+\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Week 2}
+\author{Ole Herman S. Elgesem}
 \date{\today}
 
 % Removing paragraph indents is sometimes useful:
@@ -59,12 +59,50 @@ after publishing.
 
 \section{Representations}
 Recall all the representations that have been presented. Which mutation and
-recombination operators are compatible with which representations?
+recombination operators are compatible with which representations?\\
+
+\emph{Answer:}
+
+\begin{itemize}
+    \item Binary representation
+    \begin{itemize}
+        \item Bit-flip mutation
+        \item N-point and uniform crossover
+    \end{itemize}
+    \item Integer representation
+    \begin{itemize}
+        \item Random reset and creep mutation
+        \item N-point and uniform crossover
+    \end{itemize}
+    \item Cardinal/enumerated/symbolic representations
+    \begin{itemize}
+        \item Random reset mutation
+        \item N-point and uniform crossover
+    \end{itemize}
+    \item Real-valued/Continuous representation
+    \begin{itemize}
+        \item Uniform and Gaussian mutation
+        \item N-point, discrete uniform and arithmetic crossover
+    \end{itemize}
+    \item Permutation representation
+    \begin{itemize}
+        \item Swap, insert, scramble and invert mutation
+        \item Partially mapped, order, cycle and edge crossover
+    \end{itemize}
+    \item Tree representation
+    \begin{itemize}
+        \item Mutation by random replacement
+        \item Subtree swap mutation
+    \end{itemize}
+\end{itemize}
 
 \section{Bit flip mutation}
 Given the binary chromosome with length 4, calculate the probability that no
 bits, one bit and more than one bit will be flipped in a bit-flip mutation with
-\(p_m = \frac{1}{4}\).
+\(p_m = \frac{1}{4}\).\\
+
+\emph{Answer:}
+
 
 \section{Crossover \marginsymbol}
 Given the sequences (2,4,7,1,3,6,8,9,5) and (5,9,8,6,2,4,1,3,7). Implement
@@ -75,6 +113,9 @@ these algorithms to create a new pair of solutions:
   \item Order crossover.
   \item Cycle crossover.
 \end{enumerate}
+
+\emph{Answer:}
+
 
 \section*{Corrections and suggestions}
 Corrections of grammar, language, notation or suggestions for improving these exercises are appreciated.
