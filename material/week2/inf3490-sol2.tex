@@ -103,6 +103,48 @@ bits, one bit and more than one bit will be flipped in a bit-flip mutation with
 
 \emph{Answer:}
 
+Probability of no mutation:
+\begin{equation*}
+    P(0) = \frac{3}{4} \frac{3}{4} \frac{3}{4} \frac{3}{4} = \frac{3^4}{4^4} \approx 32\%
+\end{equation*}
+\href{https://en.wikipedia.org/wiki/Binomial_distribution}{Binomial probability}:
+\begin{equation}
+    P = {n \choose k} p^k (1-p)^{n-k}
+\end{equation}
+\href{https://en.wikipedia.org/wiki/Binomial_coefficient}{Binomial coefficient}:
+\begin{equation}
+    {n \choose k} = \frac{n!}{k!(n-k)!}
+\end{equation}
+Wehere \(n\) is number of events, \(k\) is number of occurences wanted and \(p\) is the probability of a single event.\\
+
+In this case we want exactly 1 mutation in 4 events, and the probability is 0.25:
+\begin{align*}
+    n &= 4\\
+    k &= 1\\
+    p &= p_m = 0.25\\
+    P(1) &= {4 \choose 1} 0.25^1 (1-0.25)^{4-1}\\
+    P(1) &= \frac{4!}{1!(4-1)!} 0.25^1 (1-0.25)^{4-1}\\
+    P(1) &= \frac{4*3*2}{3*2} 0.25^1 (0.75)^{3}\\
+    P(1) &= 4 * 0.25^1 (0.75)^{3}\\
+    P(1) &= 0.75^3 \approx 42\%
+\end{align*}
+This makes intuitive sense and we could also arrive at this result without using the general formula.
+For example, the probability of mutation (yes,no,no,no) is:
+\begin{align*}
+    P(1) &= \frac{1}{4} \frac{3}{4} \frac{3}{4} \frac{3}{4}\\
+    P(1) &= 0.25 * 0.75^3
+\end{align*}
+And there are 4 variants, 4 places where the mutation can happen, so:
+\begin{align*}
+    P(1) &= 4 * (0.25 * 0.75^3)\\
+    P(1) &= 0.75^3 \approx 42\%\\
+\end{align*}
+Finally, the probability of more than one mutation:
+\begin{align*}
+    P(2+) &= 1 - P(0) - P(1)\\
+    P(2+) &\approx 1 - 32\% - 42\%\\
+    P(2+) &\approx 26\%
+\end{align*}
 
 \section{Crossover \marginsymbol}
 Given the sequences (2,4,7,1,3,6,8,9,5) and (5,9,8,6,2,4,1,3,7). Implement
@@ -116,6 +158,46 @@ these algorithms to create a new pair of solutions:
 
 \emph{Answer:}
 
+\subsection{Partially mapped crossover}
+\subsubsection{Output}
+\begin{verbatim}
+Parents:
+[2, 4, 7, 1, 3, 6, 8, 9, 5]
+[5, 9, 8, 6, 2, 4, 1, 3, 7]
+Children:
+[5, 9, 7, 1, 3, 6, 4, 2, 8]
+[3, 1, 8, 6, 2, 4, 7, 9, 5]
+\end{verbatim}
+\subsubsection{Source code}
+\inputminted{Python}{pmx.py}
+\subsection{Order Crossover}
+\subsubsection{Output}
+\begin{verbatim}
+Parents:
+[2, 4, 7, 1, 3, 6, 8, 9, 5]
+[5, 9, 8, 6, 2, 4, 1, 3, 7]
+Children:
+[9, 2, 4, 1, 3, 6, 8, 7, 5]
+[7, 3, 8, 6, 2, 4, 1, 9, 5]
+\end{verbatim}
+\subsubsection{Source code}
+\inputminted{Python}{order.py}
+\subsection{Cycle Crossover}
+\subsubsection{Output}
+\begin{verbatim}
+Parents:
+[2, 4, 7, 1, 3, 6, 8, 9, 5]
+[5, 9, 8, 6, 2, 4, 1, 3, 7]
+Children:
+[2, 4, 7, 1, 3, 6, 8, 9, 5]
+[5, 9, 8, 6, 2, 4, 1, 3, 7]
+\end{verbatim}
+(These 2 parents have just one cycle, so the child will be the same as parent 1).
+\subsubsection{Source code}
+\inputminted{Python}{cycle.py}
+
+\section*{Source code and files}
+If you want to run the examples yourself they are avaialable through \href{https://github.com/olehermanse/INF3490-AI_Machine_Learning}{\textbf{GitHub}}.
 
 \section*{Corrections and suggestions}
 Corrections of grammar, language, notation or suggestions for improving these exercises are appreciated.

@@ -10,6 +10,7 @@ Code is written in python 3. Examples to help with weekly exercises.
   <li><a href="./00_setup">Installing python</a><br></li>
   <li><a href="./01_intro">Introduction to Python</a><br></li>
   <li><a href="./02_search">Intro to course and search algorithms</a></li>
+  <li><a href="./03_evolution">Evolutionary Computing</a></li>
 </ol>
 
 ## Exercises
