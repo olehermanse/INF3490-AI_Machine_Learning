@@ -32,8 +32,8 @@
   \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 3}
-\author{Ole Herman S. Elgesem, Magnus Olden, Stian Petlund}
+\title{\vspace{-2cm}INF3490/INF4490 Exercises Solutions - Week 3}
+\author{Ole Herman S. Elgesem}
 \date{\today}
 
 % Removing paragraph indents is sometimes useful:
@@ -53,9 +53,7 @@
   \tabto*{0cm}\makebox[-1cm][c]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \maketitle
-\(\mathbb{P}\) marks the programming exercises, we strongly recommend using
-the python programming language for these. Exercises may be added/changed
-after publishing.
+\input{../intro.tex}
 
 \section{Pareto Optimality}
 \begin{figure}[H]
@@ -78,19 +76,53 @@ For figure a and b above, find the Pareto optimal set when
     \item Maximizing \(f_1\), minimizing \(f_2\)
     \item Maximizing both \(f_1\) and \(f_2\)
 \end{itemize}
+
+\emph{Answer:}\\
+\begin{table}[H]
+\centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+                             & a           & b             \\ \hline
+    min \(f_1\), min \(f_2\) & \{1,2,5,7\} & \{1\}         \\ \hline
+    min \(f_1\), max \(f_2\) & \{1,3\}     & \{1,2,3,4\}   \\ \hline
+    max \(f_1\), min \(f_2\) & \{7,8\}     & \{1,2,5,7,8\} \\ \hline
+    max \(f_1\), max \(f_2\) & \{3,4,6,8\} & \{4,6,8\}     \\ \hline
+  \end{tabular}
+  \caption{}
+  \label{tab:task1}
+\end{table}
+
 \section{Weighted sum}
 In figures a and b, what would be the maximum point when using weighted sum:
 \begin{itemize}
     \item \(w_1 = 1\),  \(w_2 = 1\)
     \item \(w_1 = -1\), \(w_2 = 1\)
 \end{itemize}
+\emph{Answer:}\\
+\begin{align*}
+    w_1 &=  1 & w_2 &= 1 & \Rightarrow && \max a &= 8 & \max b &= 8\\
+    w_1 &= -1 & w_2 &= 1 & \Rightarrow && \max a &= 1 & \max b &= 4
+\end{align*}
+
 \section{Hybrid Algorithm}
-Why can hybrid algorithms make it harder to maintain diversity?
+Why can hybrid algorithms make it harder to maintain diversity?\\
+
+\emph{Answer:}\\
+
+Hybrid initialization can lead to very uneven initial coverage of the search space, which might hamper the search. Hybrid crossover and mutation, as well as (Lamarckian) local search before evaluation will lead solutions towards clusters near (local) optima.
+
 \section{Measuring algorithm performance}
 Why is it usually better to use the number of fitness function evaluations as a
 time measure, rather than the number of generations, or the amount of CPU
-time spent?
+time spent?\\
 
+\emph{Answer:}\\
+
+Actual CPU time will change based on the resources available on the machine when running the algorithm.
+This means that the hardware and running software (circumstances) will affect the measured time.
+The evaluation is usually the most computationally intensive part of the algorithm, and is invariant across optimization algorithms since it is strictly problem dependent.
+To improve performance we want to minimize the amount of evaluations, and thus using it as a measurement makes sense.
+Number of evaluations is only dependent on the algorithm, not on circumstances.
 \input{../contact.tex}
 \end{document}
 % ==============================================================================
