@@ -32,3 +32,10 @@
  * Best approach to EA design:
     1. Pick a representation
     2. Pick operators that suit the problem and the representation
+
+### Representations
+ * Binary
+ * Integer
+ * Real valued
+ * Permutations
+ * Tree

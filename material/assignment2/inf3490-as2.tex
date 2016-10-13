@@ -33,7 +33,7 @@
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 \title{\vspace{-2cm}INF3490/INF4490 Mandatory Assignment 2:\\
-Travelling Salesman Problem}
+Multilayer Perceptron}
 \input{../authors_assignment.tex}
 \date{\today}
 
@@ -120,7 +120,7 @@ deviation, radial deviation, pronation, and supination
 
 \subsection*{Getting started}
 
-You are free to use a programming language of your own choice, but we highly recommend using Python. The precode is only available in Python (the files \emph{movements.py} and \emph{mlp.py} that are bundled with the data). If you choose another language, you will have to implement the everything yourself. Along with the two precode files, you are also given four files with data:
+You are free to use a programming language of your own choice, but we highly recommend using Python. The precode is only available in Python (the files \emph{movements.py} and \emph{mlp.py} that are bundled with the data). If you choose another language, you will have to implement everything yourself. Along with the two precode files, you are also given four files with data:
 \begin{itemize}
 \item \emph{data/movements\_day1.dat}
 \item \emph{data/movements\_day2.dat}
@@ -128,7 +128,7 @@ You are free to use a programming language of your own choice, but we highly rec
 \item \emph{data/movements\_day1-3.dat}
 \end{itemize}
 As the last file contains data for all days, you don't \emph{have to} use the other files.
-You can use the \texttt{movements\_day1-3.dat} file and split up the data into different sets.
+You can use the \emph{movements\_day1-3.dat} file and split up the data into different sets.\\
 
 
 The file \emph{movements.py} will read one specified data file, and split it into training, validation and test sets. Then it will create an MLP, run the training on the MLP and call the confusion method of the MLP to print the confusion matrix.
@@ -142,9 +142,9 @@ The file \emph{movements.py} will read one specified data file, and split it int
 \item \emph{confusion}
 \end{itemize}
 
-\noindent \emph{earlystopping} is the method that starts the training of the network and keeps track of when to stop the training. It should, in each iteration, call MLPs train method and run the network forward. Before the network learns the trainingdata too well, we stop training to avoid overfitting. See Fig. 3.14 on page 69, S. Marsland.\\
+\noindent \emph{earlystopping} is the method that starts the training of the network and keeps track of when to stop the training. It should, in each iteration, call MLPs train method and run the network forward. Before the network learns the trainingdata too well, we stop training to avoid overfitting. See Fig. 4.11 on page 88, S. Marsland.\\
 
-\noindent \emph{train} trains the network. This means running the backwards phase of the training algorithm to adjust the weights. See section 3.2.1 on page 54-55, S. Marsland.\\
+\noindent \emph{train} trains the network. This means running the backwards phase of the training algorithm to adjust the weights. See section 4.2.1 on page 77-79, S. Marsland.\\
 
 \noindent \emph{forward} run the network forward. When running the network forward, a perfect classifier should always have the highest value on the correct output. You will experience that this is not the case the first time(s) the network is run forward, which is why you are adjusting the weights in train.\\
 
@@ -178,7 +178,7 @@ Once we're done we print out the confusion table based on how the network classi
 \begin{itemize}
 \item Implement the neural net as explained above. Don't use more than one hidden layer (see Fig. 1).
 \item Run the algorithm on dataset \emph{movements\_day1-3.dat}. You should test with at least three different number of hidden nodes (e.g 6, 8, 12). Report your findings and provide the resulting confusion tables with percentages, one for each net with different number of hidden nodes. How many nodes do you find sufficient for the network to classify well?
-\item By only looking at your reported confusion tables, which classes where likely to me mistaken for each other?
+\item By only looking at your reported confusion tables, which classes where likely to be mistaken for each other?
 \end{itemize}
 
 \subsubsection*{INF4490}
