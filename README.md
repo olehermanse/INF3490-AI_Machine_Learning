@@ -11,6 +11,8 @@ Code is written in python 3. Examples to help with weekly exercises.
   <li><a href="./01_intro">Introduction to Python</a><br></li>
   <li><a href="./02_search">Intro to course and search algorithms</a></li>
   <li><a href="./03_evolution">Evolutionary Computing</a></li>
+  <li><a href="./04_perceptron">Perceptron</a></li>
+  <li><a href="./05_mlp">Multi Layer Perceptron</a></li>
 </ol>
 
 ## Exercises
@@ -19,9 +21,15 @@ Code is written in python 3. Examples to help with weekly exercises.
 * [Week 3](./material/week3)
 * [Week 4](./material/week4)
 * [Week 5](./material/week5)
+* [Week 6](./material/week6)
+* [Week 7](./material/week7)
+* [Week 8](./material/week8)
+* [Week 9](./material/week9)
+* [Week 10](./material/week10)
 
 ## Assignments
 * [Mandatory assignment 1](./material/assignment1)
+* [Mandatory assignment 2](./material/assignment2)
 
 ## Clone this repo
 ```
@@ -39,6 +47,7 @@ issue or make a pull request.
 * Magnus Olden
 * Ole Herman Schumacher Elgesem
 * Torstein Brevig
+* Kai Olav Ellefsen
 
 ## The MIT License (MIT)
 
