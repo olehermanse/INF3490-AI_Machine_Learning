@@ -56,7 +56,7 @@ Multilayer Perceptron}
 \maketitle
 \section*{Rules}
 This is an individual assignment.
-You are not allowed to deliver together or copy/share source-code/answers with others.
+You are not allowed to deliver together or copy/share source-code or answers with others.
 Before you begin the exercise, review the rules at this website:
 \begin{center}
 \url{http://www.uio.no/english/studies/admin/compulsory-activities/mn-ifi-mandatory.html}
@@ -97,7 +97,7 @@ In order to control a robotic prosthetic hand, Prosthetic hand controllers (PHCs
 The idea is that we can, through supervised learning, get a PHC to learn which hand movement the user of a robotic prosthetic hand wants to perform.
 
 \begin{center}
-    \includegraphics[scale=0.7]{figures/handfigures.png}
+    \includegraphics[scale=0.8]{figures/handfigures.png}
 \end{center}
 
 \subsection*{The data}
@@ -120,7 +120,10 @@ deviation, radial deviation, pronation, and supination
 
 \subsection*{Getting started}
 
-You are free to use a programming language of your own choice, but we highly recommend using Python. The precode is only available in Python (the files \emph{movements.py} and \emph{mlp.py} that are bundled with the data). If you choose another language, you will have to implement everything yourself. Along with the two precode files, you are also given four files with data:
+You are free to use a programming language of your own choice, but we strongly recommend using Python.
+The precode is only available in Python (the files \emph{movements.py} and \emph{mlp.py} that are bundled with the data).
+If you choose another language, you will have to implement everything yourself.
+Along with the two precode files, you are also given four files with data:
 \begin{itemize}
 \item \emph{data/movements\_day1.dat}
 \item \emph{data/movements\_day2.dat}
@@ -168,7 +171,7 @@ Once we're done we print out the confusion table based on how the network classi
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5]{figures/diagram.png}
-    \caption{A diagram of how it the algorithm runs}
+    \caption{A diagram of how the algorithm runs}
     \label{fig:awesome_image}
 \end{figure}
 
@@ -186,6 +189,77 @@ Once we're done we print out the confusion table based on how the network classi
 \item Implement k-fold cross-validation. Choose a suitable k. Report the correct percentages for each fold, along with the average and standard deviation. Please do not include all confusion tables in your report.
 \end{itemize}
 
+\subsubsection*{Frequently Asked Questions(FAQ)}
+\textit{What should my datastructure look like?}
+
+You are free to implement a datastructure of your own choice.
+In this mandatory assignment you are implementing a neural net with one hidden layer.
+That means you will have two weight layers with floats
+(one between input and hidden, and one between hidden and output).
+These two weight layers together constitute the neural network and it’s basically the only datastructure you need.
+We recommend that you simply use numpy matrices or numpy 2D arrays.
+Keep in mind that you need some additional structures to handle inputs, outputs, etc.\\
+
+\noindent
+\textit{I think I am done, but my neural net performs poorly (less than 60\% accuracy), why?}
+
+Make sure you’re not using a sigmoid activation function on the output.
+If you used Eq. 4.7 from the book, replace it with a linear output (Eq. 4.13).
+When replacing this output function, you also need to change the error function accordingly;
+use eq. 4.14 instead of eq. 4.8.\\
+
+\noindent
+\textit{What is one iteration in training?
+Is it one run with one input vector or is it running the whole training set through the net?}
+
+The training data is an array of n input vectors,
+and there are multiple ways to feed this through and update the network.
+You are free to define an iteration how you want,
+but make sure you train on all data.
+Here are three possible methods:
+\begin{enumerate}
+
+    \item   Feed the network with the whole training set.
+            Then update the weights based on the n output errors.
+            This is one iteration.
+
+    \item   Feed the network with one input vector from the training set.
+            Update the weights.
+            Repeat until you’ve been through the training set.
+            When done with the whole training set, you have one iteration.
+            This method differs from 1. in the way that weights will be updated after every input from the training set.
+            Now the order matters because training vector n will be run on a network trained on all the other vectors in the same iteration (and vector 1 will always be first in each iteration).
+            In order to avoid this problem, the order of the training data should be randomized before each iteration.
+
+    \item   Pick a random vector from the training set and feed it into the net, update the weights.
+            Let’s call this one iteration, but keep in mind that you need n times more iterations in order to get the same amount of training as in 1. and 2.
+            This method is similar to 2., but instead of running one iteration over the whole set,
+            we randomly pick one by one vector.
+            This means that some vectors may never be chosen and some vectors might be used multiple times.
+
+\end{enumerate}
+
+\noindent
+\textit{What libraries am I allowed to use?}
+
+You are not allowed to use machine learning libraries,
+as you have to \emph{implement} the algorithm yourself as explained in this assignemnt.
+General purpose/scientific libraries for calculations, plotting etc. are allowed.
+
+\subsubsection*{Precode}
+The assignment folder includes some precode that you're encouraged to use.
+Modify \texttt{mlp.py} and run \texttt{movements.py}:
+\begin{center}
+    \texttt{[olehelg@vetur code]\$ python3 movements.py}
+\end{center}
+
+\subsubsection*{movements.py}
+\inputminted{Python}{./code/movements.py}
+
+\subsubsection*{mlp.py}
+\inputminted{Python}{./code/mlp.py}
+
 \input{../contact.tex}
+
 \end{document}
 % ==============================================================================
