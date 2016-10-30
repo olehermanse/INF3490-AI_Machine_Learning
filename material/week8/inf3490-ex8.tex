@@ -1,0 +1,92 @@
+% ================================== HEADER ====================================
+\documentclass{article}           % Sets style/look of many things.
+% \documentclass{report}          % part, chapters, front page etc.
+\usepackage{exsheets}
+\usepackage[utf8]{inputenc}       % Encoding of input files UTF-8
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{beramono}     % Font
+\usepackage{color}                % Color text
+\usepackage{titlesec}             % Select alternative section titles
+\usepackage{fancyvrb}
+\usepackage{verbatim}             % Comment environment
+\usepackage{listings}             % Format and render text/code etc.
+\usepackage{minted}               % Much better syntax highlighting
+\usepackage{float}                % Control of floating environment/figure
+\usepackage{graphicx,  subfigure} % Better figures, graphics, units etc.
+\usepackage{multicol}             % Multiple columns
+\usepackage{amsmath}              % Math: Equation, split, align etc.
+\usepackage{siunitx}              % SI units
+\usepackage{mathtools}            % Different math tools to use with amsmath
+\usepackage{amssymb}              % Math symbols
+\usepackage[
+    colorlinks,
+    citecolor=black,              % I like links with standard black color
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+]{hyperref}                       % Links in TOC etc.
+\usepackage[all]{hypcap}          % Better links to floating environment
+
+\usepackage{tabto}
+\newcommand\marginsymbol[1][0pt]{%
+  \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
+
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 8}
+\author{Eivind Samuelsen, Ole Herman S. Elgesem}
+\date{\today}
+
+% Removing paragraph indents is sometimes useful:
+\setlength\parindent{0pt}
+
+% Make margins smaller to fit more figures, tables etc on page: (optional)
+\addtolength{\oddsidemargin}{-1.0in}
+\addtolength{\evensidemargin}{-1.0in}
+\addtolength{\textwidth}{2.0in}
+\addtolength{\topmargin}{-0.8in}
+\addtolength{\textheight}{1.6in}
+% ==============================================================================
+
+% ================================= DOCUMENT ===================================
+\begin{document}
+    \renewcommand\marginsymbol[1][0pt]{%
+  \tabto*{0cm}\makebox[-1cm][c]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
+
+\maketitle
+\input{../intro.tex}
+
+\section{SVM vs MLP}
+What advantages and disadvantages are there to support vector machines (svm) versus multilayer perceptrons (mlp)?
+What problems do they both suffer from?
+
+\section{Kernel functions}
+What is a kernel function?
+Which are the most common kernel functions and roughly what kind of transformations do they correspond to?
+
+\section{Soft Margins}
+What two factors must be balanced when using an SVM with soft margin?
+
+\section{Ensemble}
+Try to come up with a few cases when using an ensemble of classifiers where it would be fine to just pick the most popular class, and where you would want to have the majority in favor of a single class or even full consensus.
+
+\section{Principle Component Analysis}
+What is the motivation behind principle component analysis?
+
+\section{Covariance}
+Work out the covariance between the x and y dimensions of the following 2-dimensional data set.
+Describe what the results indicate about the data.
+
+\begin{table}[H]
+\centering
+  \begin{tabular}{c|c|c|c|c|c}
+    Index &  1 &  2 &  3 &  4 &  5 \\ \hline
+    x     & 10 & 39 & 19 & 23 & 28 \\
+    y     & 43 & 13 & 32 & 21 & 20 \\ \hline
+  \end{tabular}
+  \caption{Two-dimensional data set}
+  \label{tab:cov}
+\end{table}
+
+\input{../contact.tex}
+\end{document}
+% ==============================================================================
