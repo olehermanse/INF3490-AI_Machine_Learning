@@ -109,19 +109,20 @@ Why can hybrid algorithms make it harder to maintain diversity?\\
 
 \emph{Answer:}\\
 
-Hybrid initialization can lead to very uneven initial coverage of the search space, which might hamper the search. Hybrid crossover and mutation, as well as (Lamarckian) local search before evaluation will lead solutions towards clusters near (local) optima.
+Hybrid initialization can lead to very uneven initial coverage of the search space, which might hamper the search.
+Hybrid crossover and mutation, as well as (Lamarckian) local search before evaluation will lead solutions towards clusters near (local) optima.
 
 \section{Measuring algorithm performance}
-Why is it usually better to use the number of fitness function evaluations as a
-time measure, rather than the number of generations, or the amount of CPU
-time spent?\\
+Why is it usually better to use the number of fitness function evaluations as a time measure,
+rather than the number of generations, or the amount of CPU time spent?\\
 
 \emph{Answer:}\\
 
 Actual CPU time will change based on the resources available on the machine when running the algorithm.
 This means that the hardware and running software (circumstances) will affect the measured time.
 The evaluation is usually the most computationally intensive part of the algorithm, and is invariant across optimization algorithms since it is strictly problem dependent.
-To improve performance we want to minimize the amount of evaluations, and thus using it as a measurement makes sense.
+To improve performance we want to minimize the amount of evaluations,
+and thus using it as a measurement makes sense.
 Number of evaluations is only dependent on the algorithm, not on circumstances.
 \input{../contact.tex}
 \end{document}

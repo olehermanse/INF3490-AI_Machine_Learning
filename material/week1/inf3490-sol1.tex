@@ -66,8 +66,8 @@ What is its derivative \(f'(x)\) ?\\
 \[f'(x) = -4x^3 + 6x^2 + 4x - 1\]
 
 \subsection{Plotting \marginsymbol}
-Plot the function, and its gradient(derivative) from \(x=-2\) to \(x=3\). Use
-python, wolfram alpha or another plotting tool of your choice.\\
+Plot the function, and its gradient(derivative) from \(x=-2\) to \(x=3\).
+Use python, wolfram alpha or another plotting tool of your choice.\\
 
 \emph{Plot:}
 \begin{figure}[H]
@@ -83,10 +83,10 @@ python, wolfram alpha or another plotting tool of your choice.\\
 
 \subsection{Gradient Ascent \marginsymbol}
 \label{subsec:grada}
-Maximize using gradient ascent. You can try step size 0.1 and start somewhere
-in the range [-2, 3]. How does the choice of starting point and step size
-affect the algorithm's performance? Is there a starting point where the
-algorithm would not even be able to find a local maximum?\\
+Maximize using gradient ascent.
+You can try step size 0.1 and start somewhere in the range [-2, 3].
+How does the choice of starting point and step size affect the algorithm's performance?
+Is there a starting point where the algorithm would not even be able to find a local maximum?\\
 
 \emph{Answer:}
 
@@ -137,42 +137,39 @@ maximize \(f(x)\) and plot the result.\\
 \inputminted{Python}{py/w1e1d.py}
 
 \subsection{Greedy Search and Hill Climbing}
-In what way would greedy search and hill climbing differ for the
-maximization problem in Problem \ref{subsec:grada}? Can you identify a starting position
-where the two algorithms might give different results?\\
+In what way would greedy search and hill climbing differ for the maximization problem in Problem \ref{subsec:grada}?
+Can you identify a starting position where the two algorithms might give different results?\\
 
 \emph{Answer:}
 
-Greedy search will check all neighbors and always go in most
-promising direction. Hill climber will randomly find a decent neighbor and walk
-there. If both algorithms started in center ( \(x = 0.5\) ), greedy search
-always go right, while hill climber could go right and left ( 50/50 ) as both
-are \emph{up}.
+Greedy search will check all neighbors and always go in most promising direction.
+Hill climber will randomly find a decent neighbor and walk there.
+If both algorithms started in center ( \(x = 0.5\) ),
+greedy search always go right,
+while hill climber could go right and left ( 50/50 ) as both are \emph{up}.
 
 \subsection{Possible improvements}
-Gradient ascent, greedy search and hill climbing are quite similar, and are
-all based almost exclusively on exploitation. Can you think of any additions
-to these algorithms in order to do more exploration?\\
+Gradient ascent, greedy search and hill climbing are quite similar,
+and are all based almost exclusively on exploitation.
+Can you think of any additions to these algorithms in order to do more exploration?\\
 
 \emph{Answer:}
 
-Run the algorithm several times with random starting positions, this will
-\emph{explore} the solution space and find several local optima. Another option
-is to add more random movement to either algorithm. This can be done after a
-solution is found, or at a probability while searching. Could also do backtrack
-+ random jump after a solution is found.
+Run the algorithm several times with random starting positions,
+this will \emph{explore} the solution space and find several local optima.
+Another option is to add more random movement to either algorithm.
+This can be done after a solution is found, or at a probability while searching.
+Could also do backtrack + random jump after a solution is found.
 
 \subsection{Exhaustive search vs. simulated annealing}
-Which algorithm do you think is the most efficient at maximizing \(f(x)\) under
-the conditions in Problem \ref{subsec:exhaust}: exhaustive search or simulated annealing?
+Which algorithm do you think is the most efficient at maximizing \(f(x)\) under the conditions in Problem \ref{subsec:exhaust}: exhaustive search or simulated annealing?
 Explain.\\
 
 \emph{Answer:}
 
-Exhaustive search is better for this case. It takes few iterations to go
-through the one dimensional solution space. For problems in higher dimensions
-or more complex functions with smaller step size exhaustive search becomes
-impractical and simulated annealing will outperform.
+Exhaustive search is better for this case.
+It takes few iterations to go through the one dimensional solution space.
+For problems in higher dimensions or more complex functions with smaller step size exhaustive search becomes impractical and simulated annealing will outperform.
 
 \input{../contact.tex}
 \end{document}
