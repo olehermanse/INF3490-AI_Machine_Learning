@@ -32,7 +32,7 @@
   \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises Solutions - Week 3}
+\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Week 3}
 \author{Ole Herman S. Elgesem}
 \date{\today}
 
@@ -77,7 +77,7 @@ For figure a and b above, find the Pareto optimal set when
     \item Maximizing both \(f_1\) and \(f_2\)
 \end{itemize}
 
-\emph{Answer:}\\
+\textit{Answer:}\\
 \begin{table}[H]
 \centering
   \begin{tabular}{|c|c|c|}
@@ -98,7 +98,7 @@ In figures a and b, what would be the maximum point when using weighted sum:
     \item \(w_1 = 1\),  \(w_2 = 1\)
     \item \(w_1 = -1\), \(w_2 = 1\)
 \end{itemize}
-\emph{Answer:}\\
+\textit{Answer:}\\
 \begin{align*}
     w_1 &=  1 & w_2 &= 1 & \Rightarrow && \max a &= 8 & \max b &= 8\\
     w_1 &= -1 & w_2 &= 1 & \Rightarrow && \max a &= 1 & \max b &= 4
@@ -107,7 +107,7 @@ In figures a and b, what would be the maximum point when using weighted sum:
 \section{Hybrid Algorithm}
 Why can hybrid algorithms make it harder to maintain diversity?\\
 
-\emph{Answer:}\\
+\textit{Answer:}\\
 
 Hybrid initialization can lead to very uneven initial coverage of the search space, which might hamper the search.
 Hybrid crossover and mutation, as well as (Lamarckian) local search before evaluation will lead solutions towards clusters near (local) optima.
@@ -116,7 +116,7 @@ Hybrid crossover and mutation, as well as (Lamarckian) local search before evalu
 Why is it usually better to use the number of fitness function evaluations as a time measure,
 rather than the number of generations, or the amount of CPU time spent?\\
 
-\emph{Answer:}\\
+\textit{Answer:}\\
 
 Actual CPU time will change based on the resources available on the machine when running the algorithm.
 This means that the hardware and running software (circumstances) will affect the measured time.

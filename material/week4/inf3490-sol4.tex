@@ -32,8 +32,8 @@
   \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
 
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 3}
-\author{Ole Herman S. Elgesem, Magnus Olden, Stian Petlund}
+\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Week 4}
+\author{Ole Herman S. Elgesem\footnote{See \href{https://github.com/olehermanse/INF3490-AI_Machine_Learning/blob/master/README.md}{\textbf{README}} for complete list of authors/contributors.}}
 \date{\today}
 
 % Removing paragraph indents is sometimes useful:
@@ -59,27 +59,77 @@
 \subsection{} % a
 A common variant of evolution strategies used for (local) search is the \((1 + 4)\) ES.
 How would this differ from the \((1 + 1)\) ES in how the search space is explored?
-How does this, and \((1 + \lambda)\) in general, compared to hill climbing and greedy search?
+How does this, and \((1 + \lambda)\) in general, compared to hill climbing and greedy search?\\
+
+\textit{Answer:}\\
+
+The (1 + 4) ES would generate four candidate solutions from the same origin before potentially changing parent instead of one.
+This would make for a more informed choice in which direction to move in the search space.
+The higher \(\lambda\) is, the more information is gathered about the neighborhood of the current solution.
+Recall that greedy search checks out all neighbors before making a move, while hill climbing on makes one.
+So we would expect the (1 + \(\lambda\)) ES to behave increasingly like a greedy search as we increase \(\lambda\).
+
 \subsection{} % b
-What effect does an adaptive search strategy have on optimization performance?
+What effect does an adaptive search strategy have on optimization performance?\\
+
+\textit{Answer:}\\
+
+An adaptive search strategy will, in most cases, increase the convergence rate of the search especially in the late stages.
+However, it does not by itself help avoid getting stuck in local optima.
+
 \subsection{} % c
-How would it affect the search if the strategy parameters were mutated after the solution parameters instead of before?
+How would it affect the search if the strategy parameters were mutated after the solution parameters instead of before?\\
+
+\textit{Answer:}\\
+
+When strategy parameters are mutated first, the change in strategy has immediate effect on the new solution that is created.
+Thus the fitness of this solution also indirectly rates the strategy to some degree.
+If the strategy parameters are mutated after the solution parameters this link is weaker, and we would expect the strategies to adapt slower, if at all.
+
 \section{ES Implementation} % 2
 \subsection{\marginsymbol} % a
 \label{subsec:w4e3a}
-Ignoring mutation, and starting with the population \(\{1, 2, 3, 4\}\),
-implement and run 3 generations of a \((4 + 8)\) ES maximizing \(g(x) = x\),
-and observe what the end population looks like (use intermediary recombination).
+Ignoring mutation, and starting with the population \(\{1, 2, 3, 4\}\), implement and run 3 generations of a \((4 + 8)\) ES maximizing \(g(x) = x\), and observe what the end population looks like (use intermediary recombination).\\
+
+\textit{Code: (\texttt{inf3490-sol4-p2a.py})}\\
+\inputminted{Python}{inf3490-sol4-p2a.py}
+
 \subsection{} % b
 If a \((4, 8)\) ES had been used in Problem \ref{subsec:w4e3a},
-what would the probability of the optimal solution \((x = 4)\) surviving the first generation have been?
+what would the probability of the optimal solution \((x = 4)\) surviving the first generation have been?\\
+
+\textit{Answer:}\\
+
+The best solution will always survive as an offspring, so it just needs to be created
+at least once in the first place. If parents are drawn without replacement the
+probability is zero - 4 can only be one of the parents. Otherwise the probability of
+any one offspring having 4 as both parents is
+\( \frac{1}{4} \times \frac{1}{4} = \frac{1}{16} \).
+The chance of none of the eight offspring having 4 as both parents is
+\( (\frac{15}{16})^8 \approx 0.597 \)
+and so the probability of the solution surviving is
+\(1 - 0.597 = 0.403\).
+
+
 \subsection{\marginsymbol} % c
 Repeat Problem \ref{subsec:w4e3a} with an EP with \(q = 2\).
-How do the two algorithms compare?
+How do the two algorithms compare?\\
+
+\textit{Code: (\texttt{inf3490-sol4-p2c.py})}\\
+\inputminted{Python}{inf3490-sol4-p2c.py}
+
 \section{Knapsack problem}
 In a 0-1 \href{https://en.wikipedia.org/wiki/Knapsack_problem}{\textbf{knapsack problem}},
 how could you implement a repair mutation to transform infeasible solutions into feasible ones
-(i.e. make the sum of costs of the selected items go below the budget)?
+(i.e. make the sum of costs of the selected items go below the budget)?\\
+
+\textit{Answer:}\\
+
+One way would be to randomly deselect items until the solution is under budget.
+One might also consider a greedy approach that iteratively deselects the items of
+least worth until the budget is met. One could even consider this as a smaller
+0-1 knapsack problem from only the selected items and optimize that using some
+potentially completely different algorithm.
 
 \input{../contact.tex}
 \end{document}
