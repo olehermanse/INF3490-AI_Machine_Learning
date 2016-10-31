@@ -162,7 +162,9 @@ The file \emph{movements.py} will read one specified data file, and split it int
 \end{figure}
 
 \subsection*{How the algorithm runs}
-After the input is given to the MLP, we start to train the network. Instead of running the training a fixed number of iterations, we split it up into parts, where we decide whether to stop in between the iterations. This means that we will first check if the error of the network with a validation set in \emph{earlystopping}, and if our stopping criteria is not met, we start to train the network.
+After the input is given to the MLP, we start to train the network.
+Instead of running the training a fixed number of iterations, we split it up into parts, where we decide whether to stop in between the iterations.
+This means that we will check the error of the network on a validation set in \emph{earlystopping}, and if our stopping criteria is met, we will stop training.
 
 The training phase consists of the first running the network forwards, then running it backwards, adjust the weights and repeat for as many iterations as we have chosen (10,100,1000). When training is done we return to \emph{earlystopping} to check if we're done.
 
