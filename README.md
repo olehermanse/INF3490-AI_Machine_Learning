@@ -3,7 +3,8 @@
 **License:** The MIT License<br>
 
 ## Python code for INF3490/INF4490 - Biologically inspired computing
-Code is written in python 3. Examples to help with weekly exercises.
+Code is written in python 3.
+Repository includes course material(exercises and assignments) as well as notes and examples from my group lectures.
 
 ## Group lectures
 <ol start="0">
@@ -48,6 +49,7 @@ issue or make a pull request.
 * Ole Herman Schumacher Elgesem
 * Torstein Brevig
 * Kai Olav Ellefsen
+* Esben Slatto ([#1](https://github.com/olehermanse/INF3490-AI_Machine_Learning/issues/1))
 
 ## The MIT License (MIT)
 
