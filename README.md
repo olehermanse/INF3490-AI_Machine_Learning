@@ -2,22 +2,22 @@
 **Author:** olehermanse ( http://www.github.com/olehermanse )<br>
 **License:** The MIT License<br>
 
-## Python code for INF3490/INF4490 - Biologically inspired computing
+## INF3490/INF4490 - Biologically inspired computing
 Code is written in python 3.
 Repository includes course material(exercises and assignments) as well as notes and examples from my group lectures.
 
 ## Group lectures
 <ol start="0">
-  <li><a href="./00_setup">Installing python</a><br></li>
-  <li><a href="./01_intro">Introduction to Python</a><br></li>
-  <li><a href="./02_search">Intro to course and search algorithms</a></li>
-  <li><a href="./03_evolution">Evolutionary Computing</a></li>
-  <li><a href="./04_mlp">Perceptron</a></li>
-  <li><a href="./05_reinforce">Reinforcement Learning</a></li>
-  <li><a href="./06_svm">Support Vector Machines</a></li>
-  <li><a href="./07_unsupervised">Unsupervised Learning</a></li>
-  <li><a href="./08_swarm">Particle Swarm Optimization</a></li>
-  <li><a href="./09_cartesian">Cartesian Genetic Programming</a></li>
+  <li><a href="./group_lectures/00_setup">Installing python</a><br></li>
+  <li><a href="./group_lectures/01_intro">Introduction to Python</a><br></li>
+  <li><a href="./group_lectures/02_search">Intro to course and search algorithms</a></li>
+  <li><a href="./group_lectures/03_evolution">Evolutionary Computing</a></li>
+  <li><a href="./group_lectures/04_mlp">Perceptron</a></li>
+  <li><a href="./group_lectures/05_reinforce">Reinforcement Learning</a></li>
+  <li><a href="./group_lectures/06_svm">Support Vector Machines</a></li>
+  <li><a href="./group_lectures/07_unsupervised">Unsupervised Learning</a></li>
+  <li><a href="./group_lectures/08_swarm">Particle Swarm Optimization</a></li>
+  <li><a href="./group_lectures/09_cartesian">Cartesian Genetic Programming</a></li>
 </ol>
 
 ## Exercises

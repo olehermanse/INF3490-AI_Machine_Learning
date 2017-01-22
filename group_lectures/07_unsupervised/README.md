@@ -10,6 +10,6 @@
  * 2D examples with 2 and 3 clusters
 
 Discussed:
-* [Exercises 9](./material/week9)
+* [Exercises 9](../../material/week9)
 
 See the solution for more info
