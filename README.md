@@ -12,8 +12,12 @@ Repository includes course material(exercises and assignments) as well as notes 
   <li><a href="./01_intro">Introduction to Python</a><br></li>
   <li><a href="./02_search">Intro to course and search algorithms</a></li>
   <li><a href="./03_evolution">Evolutionary Computing</a></li>
-  <li><a href="./04_perceptron">Perceptron</a></li>
-  <li><a href="./05_mlp">Multi Layer Perceptron</a></li>
+  <li><a href="./04_mlp">Perceptron</a></li>
+  <li><a href="./05_reinforce">Reinforcement Learning</a></li>
+  <li><a href="./06_svm">Support Vector Machines</a></li>
+  <li><a href="./07_unsupervised">Unsupervised Learning</a></li>
+  <li><a href="./08_swarm">Particle Swarm Optimization</a></li>
+  <li><a href="./09_cartesian">Cartesian Genetic Programming</a></li>
 </ol>
 
 ## Exercises
@@ -46,10 +50,10 @@ issue or make a pull request.
 * Jim Tørresen
 * Stian Lind Petlund
 * Magnus Olden
-* Ole Herman Schumacher Elgesem
+* [Ole Herman Schumacher Elgesem](https://github.com/olehermanse)
 * Torstein Brevig
 * Kai Olav Ellefsen
-* Esben Slatto ([#1](https://github.com/olehermanse/INF3490-AI_Machine_Learning/issues/1))
+* [Esben Slatto](https://github.com/esb1) ([#1](https://github.com/olehermanse/INF3490-AI_Machine_Learning/issues/1))
 
 ## The MIT License (MIT)
 
