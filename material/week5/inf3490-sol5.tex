@@ -1,50 +1,10 @@
-% ================================== HEADER ====================================
-\documentclass{article}           % Sets style/look of many things.
-% \documentclass{report}          % part, chapters, front page etc.
-\usepackage{exsheets}
-\usepackage[utf8]{inputenc}       % Encoding of input files UTF-8
-\usepackage[T1]{fontenc}
-\usepackage[scaled]{beramono}     % Font
-\usepackage{color}                % Color text
-\usepackage{titlesec}             % Select alternative section titles
-\usepackage{fancyvrb}
-\usepackage{verbatim}             % Comment environment
-\usepackage{listings}             % Format and render text/code etc.
-\usepackage{minted}               % Much better syntax highlighting
-\usepackage{float}                % Control of floating environment/figure
-\usepackage{graphicx,  subfigure} % Better figures, graphics, units etc.
-\usepackage{multicol}             % Multiple columns
-\usepackage{amsmath}              % Math: Equation, split, align etc.
-\usepackage{siunitx}              % SI units
-\usepackage{mathtools}            % Different math tools to use with amsmath
-\usepackage{amssymb}              % Math symbols
-\usepackage[
-    colorlinks,
-    citecolor=black,              % I like links with standard black color
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-]{hyperref}                       % Links in TOC etc.
-\usepackage[all]{hypcap}          % Better links to floating environment
-
-\usepackage{tabto}
-\newcommand\marginsymbol[1][0pt]{%
-  \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
-
-\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises Solutions - Week 5}
-\author{Ole Herman SElgesem, Magnus Olden, Stian Petlund}
-\date{\today}
+\input{../header.tex}
+\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Neural Networks}
+\author{Eivind Samuelsen\input{../author_footnote.tex}}
+\date{}
 
 % Removing paragraph indents is sometimes useful:
 \setlength\parindent{0pt}
-
-% Make margins smaller to fit more figures, tables etc on page: (optional)
-\addtolength{\oddsidemargin}{-1.0in}
-\addtolength{\evensidemargin}{-1.0in}
-\addtolength{\textwidth}{2.0in}
-\addtolength{\topmargin}{-0.8in}
-\addtolength{\textheight}{1.6in}
 % ==============================================================================
 
 % ================================= DOCUMENT ===================================
@@ -54,6 +14,117 @@
 
 \maketitle
 \input{../intro.tex}
+
+\section{Single Layer Perceptron}
+\subsection{}
+In the perceptron below, what will the output be when the input is (0, 0)?
+What about inputs (0, 1), (1, 1) and (1, 0)?
+What if we change the bias weight to -0.5?
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{fig1.png}
+\caption{Single Layer Perceptron. b = 1 }
+\label{fig:slp}
+\end{center}
+\end{figure}
+
+\noindent\textit{Answer:}
+
+\noindent
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{Bias $=-1.5$} & \multicolumn{3}{c|}{Bias $=-0.5$}\tabularnewline
+\hline
+Input & Weighted sum & Output & Input & Weighted sum & Output\tabularnewline
+\hline
+\hline
+$\left(0,0\right)$ & $-1.5$ & $0$ & $\left(0,0\right)$ & $-0.5$ & $0$\tabularnewline
+\hline
+$\left(0,1\right)$ & $-0.5$ & $0$ & $\left(0,1\right)$ & $0.5$ & $1$\tabularnewline
+\hline
+$\left(1,0\right)$ & $-0.5$ & $0$ & $\left(1,0\right)$ & $0.5$ & $1$\tabularnewline
+\hline
+$\left(1,1\right)$ & $0.5$ & $1$ & $\left(1,1\right)$ & $1.5$ & $1$\tabularnewline
+\hline
+\end{tabular}
+\par\end{center}
+
+\subsection{}
+Starting with random weights, how do you proceed in order to train the perceptron above to perform any given binary operation?\\
+
+\noindent\textit{Answer:}
+
+\noindent
+See the source code for the next task.
+
+\subsection{Implement a perceptron \marginsymbol}
+Implement the perceptron, and train it to perform the logical functions NOT (use only one of the inputs), NAND, and NOR.
+What happens when you try to train it do the XOR function?\\
+
+\textit{Source code:}
+\inputminted{Python}{bool_perceptron.py}
+The source code is available online on GitHub:\\
+\href{https://github.com/olehermanse/INF3490-AI_Machine_Learning/tree/master/material/week5}{\textbf{github.com/olehermanse/INF3490-AI\_Machine\_Learning/tree/master/material/week5}}
+
+\section{Multi Layer Perceptron (MLP)}
+The figure below shows a multilayer perceptron that constructs the XOR function.
+How would you rewrite it to construct the binary equivalence function
+(i.e. the output is above threshold when both inputs are either 0 or 1)?
+Can you construct it so that it will detect equivalence for any combination of integer inputs?
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{fig2.png}
+\caption{An illustrated example of a multi layer perceptron}
+\label{fig:mlp}
+\end{center}
+\end{figure}
+
+\noindent\textit{Answer:}
+
+\noindent
+If we just want it to work in the binary case, we can simply switch
+signs on all the output weights to create the opposite function:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{opposite.png}
+\end{center}
+\end{figure}
+
+If we want it to work for all integers, we have to change the weights
+in the first layer. First, note that the output layer encodes the
+function $h_{2}-h_{1}-0.5>0$ which is equivalent to $h_{2}\land\lnot h_{1}$
+since $h_{1}$ and $h_{2}$ are either 0 or 1. If we equate true with
+1 and false with 0 we can write $\mbox{\ensuremath{h_{1}}:\,\ \ensuremath{i_{1}}+\ensuremath{i_{2}}-1.5>0}$
+and $\mbox{\ensuremath{h_{2}}:\,\ \ensuremath{i_{1}}+\ensuremath{i_{2}}-0.5>0}$,
+so the output is
+
+\[
+o:\, i_{1}+i_{2}>0.5\ \land\ i_{1}+i_{2}\leq1.5\quad\Leftrightarrow\quad o:\,0.5<i_{1}+i_{2}\leq1.5
+\]
+ Limiting $i_{1}$ and $i_{2}$ to integers gives us $o:\, i_{1}+i_{2}=1$.
+So the output is 1 if and only if the sum of the inputs are 1. We
+can get the equivalence function by changing this to $o:\, i_{1}-i_{2}=0$.
+Going back a step or two we see that we can achieve this by making
+the output
+\[
+o:\, i_{1}-i_{2}>-0.5\ \land\ i_{1}-i_{2}\leq0.5
+\]
+ or something similar. This has the same logical form that we already
+have, so we don't need to change the weights of the output layer,
+but only those of the hidden layer.
+
+Tracing back, we see that we would need $h_{1}:\, i_{1}-i_{2}-0.5>0$
+and $h_{2}:\, i_{1}-i_{2}+0.5>0$ as the hidden layer outputs. This
+implies the following weights:
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{all_integers.png}
+\end{center}
+\end{figure}
 
 \input{../contact.tex}
 \end{document}

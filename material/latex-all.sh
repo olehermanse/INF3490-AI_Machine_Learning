@@ -12,6 +12,8 @@ function triplelatex {
     mv _minted-$filename ./.latex
 }
 
+THIS_FOLDER="`dirname \"$0\"`"
+cd $THIS_FOLDER
 for foldername in *; do
     if [[ -d $foldername ]]; then
         cd $foldername

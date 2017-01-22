@@ -1,0 +1,58 @@
+\input{../header.tex}
+\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Particle Swarms \& Cartesian Genetic Programming}
+\author{Eivind Samuelsen\input{../author_footnote.tex}}
+\date{}
+
+% Removing paragraph indents is sometimes useful:
+\setlength\parindent{0pt}
+% ==============================================================================
+
+% ================================= DOCUMENT ===================================
+\begin{document}
+    \renewcommand\marginsymbol[1][0pt]{%
+  \tabto*{0cm}\makebox[-1cm][c]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
+
+\maketitle
+\input{../intro.tex}
+
+\section{Particle Swarm Optimizations}
+The particle swarm velocity update formula is
+\begin{equation}
+    v_i^{(t+1)} \leftarrow \alpha v_i ^{(t)} + U(0,\beta)(p_i-x_i^{(t)}) + U(0,\beta)(p_g - x_i^{(t)})
+\end{equation}
+If we replaced the random terms related to personal and global best with a term proportional to the local objective function gradient, like this:
+\begin{equation}
+    v_i^{(t+1)} \leftarrow \alpha v_i ^{(t)} + \gamma \nabla f(x_i^{(t)})
+\end{equation}
+How would the particles behave? How does this compare to gradient ascent?\\
+
+\textit{Answer:}
+
+The only thing separating it from doing a bunch of gradient ascent runs is the term \(av_i^{(t)}\), that transfers a fraction of the displacement in the latest iteration, giving the particles a sort of momentum.
+The particles would behave as balls that roll upwards instead of downwards.
+
+\section{Cartesian Genetic Programming}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{cartesian.png}
+\end{center}
+\end{figure}
+Using the setup above, construct circuits from the Cartesian genetic programming genotypes below:
+\begin{itemize}
+    \item 231 110 323 121 165 046 154 176 11 5 8 9
+    \item 003 332 123 010 167 075 345 365 9 10 11 4
+\end{itemize}
+
+It isn't really necessary to know what the function numbers mean in order to draw the diagram.
+
+The functions could be anything from simple binary operators (AND, OR, XOR, etc.) to real-valued arithmetic operators, to signal processing operations and so on.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{cgp_sol.png}
+\end{center}
+\end{figure}
+
+\input{../contact.tex}
+\end{document}
+% ==============================================================================

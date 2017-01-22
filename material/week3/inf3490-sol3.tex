@@ -1,50 +1,10 @@
-% ================================== HEADER ====================================
-\documentclass{article}           % Sets style/look of many things.
-% \documentclass{report}          % part, chapters, front page etc.
-\usepackage{exsheets}
-\usepackage[utf8]{inputenc}       % Encoding of input files UTF-8
-\usepackage[T1]{fontenc}
-\usepackage[scaled]{beramono}     % Font
-\usepackage{color}                % Color text
-\usepackage{titlesec}             % Select alternative section titles
-\usepackage{fancyvrb}
-\usepackage{verbatim}             % Comment environment
-\usepackage{listings}             % Format and render text/code etc.
-\usepackage{minted}               % Much better syntax highlighting
-\usepackage{float}                % Control of floating environment/figure
-\usepackage{graphicx,  subfigure} % Better figures, graphics, units etc.
-\usepackage{multicol}             % Multiple columns
-\usepackage{amsmath}              % Math: Equation, split, align etc.
-\usepackage{siunitx}              % SI units
-\usepackage{mathtools}            % Different math tools to use with amsmath
-\usepackage{amssymb}              % Math symbols
-\usepackage[
-    colorlinks,
-    citecolor=black,              % I like links with standard black color
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-]{hyperref}                       % Links in TOC etc.
-\usepackage[all]{hypcap}          % Better links to floating environment
-
-\usepackage{tabto}
-\newcommand\marginsymbol[1][0pt]{%
-  \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
-
-\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Week 3}
-\author{Ole Herman S. Elgesem}
-\date{\today}
+\input{../header.tex}
+\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Optimization & Performance}
+\author{Ole Herman S. Elgesem\input{../author_footnote.tex}}
+\date{}
 
 % Removing paragraph indents is sometimes useful:
 \setlength\parindent{0pt}
-
-% Make margins smaller to fit more figures, tables etc on page: (optional)
-\addtolength{\oddsidemargin}{-1.0in}
-\addtolength{\evensidemargin}{-1.0in}
-\addtolength{\textwidth}{2.0in}
-\addtolength{\topmargin}{-0.8in}
-\addtolength{\textheight}{1.6in}
 % ==============================================================================
 
 % ================================= DOCUMENT ===================================

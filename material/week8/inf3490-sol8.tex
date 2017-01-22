@@ -1,50 +1,10 @@
-% ================================== HEADER ====================================
-\documentclass{article}           % Sets style/look of many things.
-% \documentclass{report}          % part, chapters, front page etc.
-\usepackage{exsheets}
-\usepackage[utf8]{inputenc}       % Encoding of input files UTF-8
-\usepackage[T1]{fontenc}
-\usepackage[scaled]{beramono}     % Font
-\usepackage{color}                % Color text
-\usepackage{titlesec}             % Select alternative section titles
-\usepackage{fancyvrb}
-\usepackage{verbatim}             % Comment environment
-\usepackage{listings}             % Format and render text/code etc.
-\usepackage{minted}               % Much better syntax highlighting
-\usepackage{float}                % Control of floating environment/figure
-\usepackage{graphicx,  subfigure} % Better figures, graphics, units etc.
-\usepackage{multicol}             % Multiple columns
-\usepackage{amsmath}              % Math: Equation, split, align etc.
-\usepackage{siunitx}              % SI units
-\usepackage{mathtools}            % Different math tools to use with amsmath
-\usepackage{amssymb}              % Math symbols
-\usepackage[
-    colorlinks,
-    citecolor=black,              % I like links with standard black color
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
-]{hyperref}                       % Links in TOC etc.
-\usepackage[all]{hypcap}          % Better links to floating environment
-
-\usepackage{tabto}
-\newcommand\marginsymbol[1][0pt]{%
-  \tabto*{0cm}\makebox[\dimexpr-1cm-#1\relax][r]{$\mathbb{P}$}\tabto*{\TabPrevPos}}
-
-\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
-\title{\vspace{-2cm}INF3490/INF4490 Exercises - Week 7}
-\author{Eivind Samuelsen, Ole Herman S. Elgesem}
-\date{\today}
+\input{../header.tex}
+\title{\vspace{-2cm}INF3490/INF4490 Exercise Solutions - Support Vector Machines}
+\author{Eivind Samuelsen\input{../author_footnote.tex}}
+\date{}
 
 % Removing paragraph indents is sometimes useful:
 \setlength\parindent{0pt}
-
-% Make margins smaller to fit more figures, tables etc on page: (optional)
-\addtolength{\oddsidemargin}{-1.0in}
-\addtolength{\evensidemargin}{-1.0in}
-\addtolength{\textwidth}{2.0in}
-\addtolength{\topmargin}{-0.8in}
-\addtolength{\textheight}{1.6in}
 % ==============================================================================
 
 % ================================= DOCUMENT ===================================
@@ -55,24 +15,110 @@
 \maketitle
 \input{../intro.tex}
 
-\section{Policies}
-What policy would make on-policy and off-policy learning equivalent,
-specifically if we consider Q-learning and SARSA-learning?
-In other words, what policy used by an agent will make the learning based on Q-learning and SARSA-learning the same?
+\section{SVM vs MLP}
+What advantages and disadvantages are there to support vector machines (svm) versus multilayer perceptrons (mlp)?
+What problems do they both suffer from?\\
 
-\section{Reinforcement learning for chess}
-Imagine you were to design a reinforcement learning agent for playing chess.
-The state that the agent sees on its turn is the layout of the chess board.
-We can set the reward structure for the agent to be +1 for winning, -1 for losing, 0 for drawing, and 0 again for every move that does not lead to a win or loss.
-Such an agent will essentially learn to win.
-It will do so eventually after much exploration and a number of episodes, since it is always trying to maximize its expected return (cumulative rewards in the long run).
-What might happen if, in addition, we give a positive reward to the agent for taking its opponent's pieces as well?
+\textit{Answer:}
 
-\section{Large state/action spaces}
-In most real world problems with large state/action spaces, quantizing the state/action space and using tables to store/update values, e.g. the Q table, is not feasible.
-Can you suggest a way for reinforcement learning algorithms to generalize to arbitrarily large real valued state/action spaces?
-Hint: The tables are approximating a value function, i.e. mapping a state-action pair to a value.
-What else could be used for function approximation?
+Advantages of SVM:
+\begin{itemize}
+    \item Guarantees optimal separation
+    \item Usually gives better classification performance
+\end{itemize}
+Disadvantages of SVM:
+\begin{itemize}
+    \item Need to decide on an appropriate kernel function
+    \item Training is slow on really large training sets (SVM is at leas O(\(n^2\)), while neural net training is O(\(n\) on the size of the training data)
+\end{itemize}
+Problems with both:
+\begin{itemize}
+    \item Both ave several parameters to tune which may have pretty unintuitive effects
+    \item Both are prone to overfitting
+\end{itemize}
+
+\section{Kernel functions}
+What is a kernel function?
+Which are the most common kernel functions and roughly what kind of transformations do they correspond to?\\
+
+\textit{Answer:}
+
+A support vector machine kernel is a function that rolls the transformation of two points and subsequent inner product between the transformed points into one.
+Usually, the transformation maps the points into a higher dimensionality, and the inner product is the scalar dot product \(x \dot y = \sum\limits_{i=1}^{n} x_i \dot y_i\).
+
+This is done mainly because it simplifies calculation, because the kernel in most cases is less computationally intensive than doing the same one step at a time.
+A convenient byproduct is that it enables transformations that are well-defined, but physically impossible to calculate.
+The most common kernels are:
+\begin{itemize}
+    \item None: \(x \cdot y\) - simply calculates the dot product, no transformation at all.
+    \item Polynomial: \((1 + x \cdot y)^p\) - transformation into a polynomial space (e.g. \([1,x,x^2,x^3,...,x^p]\))
+    \item Radial basis function: \(\exp\big(-\frac{(x-y)^2}{2\sigma^2}\big)\) or  \(\exp\big(-\gamma(x-y)^2\big)\) - transformation into an infinite-dimensional space that has a "smoothness" that is controlled by \(\sigma\).
+\end{itemize}
+
+\section{Soft Margins}
+What two factors must be balanced when using an SVM with soft margin?\\
+
+\textit{Answer:}
+
+An SVM with soft margin allows some of the training data to be misclassified.
+This is done to avoid over-fitting to the (perhaps faulty) training data, but we would still like to get as much of the training data as possible outside of the margin.
+This gives us two conflicting factors to worry about: Classifying training data right and avoid over-fitting.
+
+\section{Ensemble}
+Try to come up with a few cases when using an ensemble of classifiers where it would be fine to just pick the most popular class, and where you would want to have the majority in favor of a single class or even full consensus.\\
+
+\textit{Answer:}
+
+What cases where it would be wisest to not classify depends on how critical it is to have high precision: when in doubt, it is best to guess or refuse to give an opinion.
+
+Examples of cases where a guess should always be made includes cases where a faulty classification is harmless, like recommendations for movies or music.
+The opposite case would be something like making medical diagnosis, where it is always better to ask a real doctor when there is disagreement in the ensemble.
+
+\section{Principle Component Analysis}
+What is the motivation behind principle component analysis?\\
+
+\textit{Answer:}
+
+There are actually two main motivations:
+\begin{itemize}
+    \item Make it easier to train a classifier because information is removed or make the classifier simpler and more efficient because of reduced computational complexity.
+    \item Make the data easier to visualize, to manually deduce patterns or to help tune some classifier.
+\end{itemize}
+
+\section{Covariance}
+Work out the covariance between the x and y dimensions of the following 2-dimensional data set.
+Describe what the results indicate about the data.
+
+\begin{table}[H]
+\centering
+  \begin{tabular}{c|c|c|c|c|c}
+    Index &  1 &  2 &  3 &  4 &  5 \\ \hline
+    x     & 10 & 39 & 19 & 23 & 28 \\
+    y     & 43 & 13 & 32 & 21 & 20 \\ \hline
+  \end{tabular}
+  \caption{Two-dimensional data set}
+  \label{tab:cov}
+\end{table}
+
+\textit{Answer:}
+
+The covariance\footnotemark is
+\begin{equation}
+    \text{cov}_{xy} = \frac{1}{n}\sum\limits_{i=1}^{n}(x_i-\mu_x)(y_i-\mu_y)
+\end{equation}
+First we have to estimate the arithmetic means:
+\begin{equation}
+    \mu = \frac{1}{n}\sum\limits_{i=1}^{n}x_i
+\end{equation}
+\begin{align*}
+    \mu_x &= \frac{1}{n}\sum\limits_{i=1}^{n}x_i = 23.8\\
+    \mu_y &= \frac{1}{n}\sum\limits_{i=1}^{n}y_i = 25.8
+\end{align*}
+
+Calculating the covariance by the formula above then gives us \(\text{cov}_{xy} = -96.44\).
+This indicates that there are some negative correlation between x and y, that y decreases when x increases, but to determine how large it is, one would have to calculate the variances for both x and y as well.
+\footnotetext{Note: covariance of a sample should be calculated using \(n-1\) instead of \(n\).
+Learn more about samples and sample variance in \textbf{\href{https://www.khanacademy.org/math/ap-statistics/quantitative-data-ap/measuring-spread-quantitative/v/review-and-intuition-why-we-divide-by-n-1-for-the-unbiased-sample-variance}{"Review and intuition why we divide by n-1 for the unbiased sample variance" on khanacademy.org}}.}
 
 \input{../contact.tex}
 \end{document}
