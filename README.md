@@ -21,16 +21,16 @@ Repository includes course material(exercises and assignments) as well as notes 
 </ol>
 
 ## Exercises
-* [Week 1](./material/week1)
-* [Week 2](./material/week2)
-* [Week 3](./material/week3)
-* [Week 4](./material/week4)
-* [Week 5](./material/week5)
-* [Week 6](./material/week6)
-* [Week 7](./material/week7)
-* [Week 8](./material/week8)
-* [Week 9](./material/week9)
-* [Week 10](./material/week10)
+* [Week 1 - Simple Search Algorithms](./material/week1)
+* [Week 2 - Representations](./material/week2)
+* [Week 3 - Optimization Performance](./material/week3)
+* [Week 4 - Evolutionary Computing](./material/week4)
+* [Week 5 - Neural Networks](./material/week5)
+* [Week 6 - Advanced Neural Networks](./material/week6)
+* [Week 7 - Reinforcement Learning](./material/week7)
+* [Week 8 - Support Vector Machines](./material/week8)
+* [Week 9 - Unsupervised Learning](./material/week9)
+* [Week 10 - Particle Swarms and Cartesian Genetic Programming](./material/week10)
 
 ## Assignments
 * [Mandatory assignment 1](./material/assignment1)
