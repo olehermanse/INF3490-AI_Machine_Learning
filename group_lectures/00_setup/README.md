@@ -29,8 +29,8 @@ $ brew install python3
 
 ### Ubuntu(Server) install
 ```
-$ sudo apt-get install python
-$ sudo apt-get install python3
+$ sudo apt-get install python python-tk
+$ sudo apt-get install python3 python3-tk
 ```
 
 ### Windows install
