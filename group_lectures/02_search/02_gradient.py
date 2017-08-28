@@ -28,8 +28,6 @@ def plot_gradient_ascent(function,derivative,start,stop,steps):
     fig = plt.figure("INF3490 - Gradient Ascent")
     fig.suptitle("Visualization of gradient ascent")
 
-    step = (stop - start) / steps
-
     plt.subplot(211)
     plt.plot(x,function(x))
     randx = random.uniform(start,stop)
