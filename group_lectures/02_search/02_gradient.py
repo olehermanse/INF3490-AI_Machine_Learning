@@ -14,12 +14,12 @@ def df(x):
     return -4 * x**3 + 6 * x**2 + 4 * x - 1
 
 def gradient_ascent(function, derivative, gamma, x, precision):
-    dx = gamma * df(x)
+    dx = gamma * derivative(x)
     while abs(dx) > precision:
         y = function(x)
         plt.plot(x,y, color="blue", marker="s", markersize=6)
         x += dx
-        dx = gamma * df(x)
+        dx = gamma * derivative(x)
     return x,function(x)
 
 def plot_gradient_ascent(function,derivative,start,stop,steps):
