@@ -54,7 +54,7 @@ issue or make a pull request.
 * Torstein Brevig
 * Kai Olav Ellefsen
 * [Esben Slatto](https://github.com/esb1) ([#1](https://github.com/olehermanse/INF3490-AI_Machine_Learning/issues/1))
-
+* [Kris-Mikael Krister](https://github.com/kmkr) ([#2](https://github.com/olehermanse/INF3490-AI_Machine_Learning/pull/2) [#3](https://github.com/olehermanse/INF3490-AI_Machine_Learning/pull/3) [#4](https://github.com/olehermanse/INF3490-AI_Machine_Learning/pull/4) )
 ## The MIT License (MIT)
 
 This copyright notice and license only applies to text and source code
